@@ -1,0 +1,23 @@
+# 模拟get请求
+- config:      #使用(- ) 表示数组，同一缩进的所有项属于一个数组
+    name: 验证能否打开湖南新梦想主页
+    base_url: http://www.hnxmxit.com
+
+- test:  # 测试步骤名称
+    name: 接口名称 湖南新梦想主页接口
+    request:  #键值对，对着下面2个值
+      url: /   #键值对
+      method: GET   #键值对
+    validate:  #断言
+      - eq: ["status_code",200]
+
+#/Users/w550856/Library/Python/3.8/bin/hrun ./testcases/demo_01.yml
+#关闭SIP,重启按住command +R,
+#csrutil disable
+#重启
+#sudo ln -s  /Users/w550856/Library/Python/3.8/bin/hrun /usr/bin/hrun
+#ln: /usr/bin/hrun: Read-only file system
+#sudo mount -uw /
+#sudo ln -s  /Users/w550856/Library/Python/3.8/bin/hrun /usr/bin/hrun
+
+

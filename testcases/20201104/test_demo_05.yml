@@ -1,0 +1,17 @@
+- config:
+    name: 测试创建标签接口
+    base_url: https://api.weixin.qq.com
+    variables:
+      - token: ${get_access_token()}
+
+- test:
+    name: 调用 创建标签 接口
+    skipUnless: $token  #debugtalk.py appid请求调用失败，没有返回真正的token值，解析失败， 返回none  none是假，skipUnless条件不成立的时候执行,返回值为False时候成立,不执行，跳过（0、空等为false）
+    request:  #返回none跳过创建标签
+      url: /cgi-bin/tags/create
+      method: POST
+      params:
+        access_token: $token
+      json: { "tag" : { "name" : "ne1_p3p4" } }
+    validate:
+      - eq: ['status_code',200]

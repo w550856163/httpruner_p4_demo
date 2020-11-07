@@ -1,0 +1,18 @@
+- config:
+    name: test create tag
+    base_url: ${ENV(BASE_URL)}
+    variables:
+      - token: ${get_access_token()}
+      - w: ${get_search_word()}
+      #- token: ${get_access_token()}
+      # w: ${get_search_word()}
+- test:
+    name: call create tag
+    request:
+      url: /cgi-bin/tags/create
+      method: POST
+      params:
+        access_token: $token
+      json: { "tag" : { "name" : $w } }
+    validate:
+      - eq: ['status_code',200]

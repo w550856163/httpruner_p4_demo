@@ -1,0 +1,36 @@
+# 关联 上一个接口的返回值（截取的部分值）作为下一个接口的参数
+- config:
+    name: 关联实现增删改查接口
+    base_url: ${ENV(BASE_URL)}
+
+- test:
+    name: get_access_token
+    api: api/get_access_token.yml
+    extract:
+      token_id: content.access_token
+    validate:
+      - eq: [content.expires_in,7200]
+
+- test:
+    name: create tag
+    api: api/create_tag.yml
+    validate:
+      - eq: ['status_code',200]
+
+- test:
+    name: get_creat_tag
+    api: api/get_creat_tag.yml
+    validate:
+      - eq: [$bname,'p3p4demo']
+
+- test:
+    name: update_tag
+    api: api/update_tag.yml
+    validate:
+      - eq: [content.errcode,0]
+
+- test:
+    name: delete_tag
+    api: api/delet_tag.yml
+    validate:
+      - eq: [content.errcode,0]

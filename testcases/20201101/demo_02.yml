@@ -1,0 +1,17 @@
+# 模拟带参数的get请求
+- config:
+    name: 验证获取access_token接口
+    base_url: https://api.weixin.qq.com
+
+- test:
+    name: 调用 access_token 接口
+    request:
+      url: /cgi-bin/token
+      method: GET
+      params:
+        grant_type: client_credential
+        appid: wx0e7b21a28056b1bf
+        secret: afd400e152a4dee860c3f189dffc53bd
+    validate:
+      - eq: ['status_code',200]
+      - eq: [content.expires_in,7200]

@@ -1,0 +1,17 @@
+- config:
+    name: 腾讯首页请求测试
+    base_url: https://www.qq.com
+    output:
+      - title
+- test:
+    name: 腾讯首页请求测试  c
+    request:
+      method: GET
+      url: /
+      headers:
+        User-Agent: 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36'
+        Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'
+    extract:
+      title: '<title>(.+?)</title>'
+    validate:
+      - eq: ['status_code',200]

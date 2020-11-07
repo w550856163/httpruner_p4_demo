@@ -1,0 +1,15 @@
+# 断言
+- config:
+    name: 验证能否打开湖南新梦想主页
+    base_url: http://www.hnxmxit.com
+
+- test:  # 测试步骤名称
+    name: 接口名称 湖南新梦想主页接口
+    request:
+      url: /
+      method: GET
+    validate:
+      - eq: ["status_code",200]
+      - is: ['status_code',200]
+      - equals: ['status_code',200]
+      - ==: ['status_code',200]

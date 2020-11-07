@@ -1,0 +1,16 @@
+#获取公众号已创建的标签
+name: get create tag api
+base_url: ${ENV(BASE_URL)}
+request:
+  method: GET
+  url: /cgi-bin/tags/get
+  params:
+    access_token: $token_id
+extract:
+      bname: content.tags.27.name
+validate:
+    - eq: ['status_code',200]
+
+
+
+

@@ -1,0 +1,17 @@
+# 获取响应数据2 (响应正文(html等) )
+- config:
+    name: 验证能否打开湖南新梦想主页
+    base_url: https://www.baidu.com
+
+- test:
+    name: 接口名称 湖南新梦想主页接口
+    request:
+      url: /
+      method: GET
+    extract: # 提取值到变量存储
+      v: '<a href=http://news.baidu.com name=(.+?) class=mnav>'  #因为html报告中不能显示完全的响应正文，  此时想查看响应正文数据，故意把截取数据正则或者是断言报错,    因为报错就能显示requests真实的响应正文
+      #class="(.+?)-menu-item" data-tid="1001"
+
+    validate:
+     #- eq: [$v,'user']
+      - eq: [$v,'tj_trnews']
