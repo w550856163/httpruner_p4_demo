@@ -1,11 +1,10 @@
-#删除已创建的标签
-name: delete_tag api
+name: delete tag api
 base_url: ${ENV(BASE_URL)}
 request:
   method: POST
-  url: cgi-bin/tags/delete
+  url: /cgi-bin/tags/delete
   params:
     access_token: $token_id
-  json: {   "tag":{        "id" : 102   } }
-validate:
-    - eq: ['status_code',200]
+  json: {"tag":{"id":686}}
+validate:  # 一般这里做非业务的断言 简单
+  - eq: ['status_code',200]

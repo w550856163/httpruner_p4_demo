@@ -1,0 +1,24 @@
+- config:
+    name: 验证 delete_tag 接口
+    variables:
+      excepted_code: 0
+#写法一：引用了api
+#- test:
+#    name: exec get_access_token api
+#    api: api/get_access_token.yml
+#    extract:
+#      token: content.access_token
+#写法二：引用 testcase
+- test:
+    name: exec get_access_token api
+    testcase: testcases/20201108/test_get_access_token.yml
+    extract:
+      - token_id
+
+- test:
+    name: exec delete_tag api
+    api: api/delet_tag.yml
+    extract:
+      error_code: content.errcode
+    validate:
+      - eq: [$error_code,$excepted_code]

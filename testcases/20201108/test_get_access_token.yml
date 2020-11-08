@@ -1,0 +1,13 @@
+- config:
+    name: 验证 get_access_token 接口
+    variables:
+      scode: 200
+    #output 输出、跨用例传输参数
+    export:   # export是httprunner2.2推出的，用来代替output，包含了跨用例传输参数
+      - token_id
+
+- test:
+    name: exec get_access_token
+    api: api/get_access_token.yml
+    extract:
+      token_id: content.access_token
