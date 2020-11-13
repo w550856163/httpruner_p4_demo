@@ -1,9 +1,0 @@
-config:  #数组写法
-  name: testsuite_demo_01
-
-testcases:
-  - name: test_get_access_token
-    testcase: testcases/20201108/test_get_access_token.yml
-
-  - name: test_delete_tag
-    testcase: testcases/20201108/test_delete_tag.yml
