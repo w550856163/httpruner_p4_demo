@@ -1,0 +1,17 @@
+- config:
+    name: 验证百度搜索功能
+    export:
+      - title
+
+- test:
+    name: exec baidu search api
+#    variables:
+#      word: $search_word  转到api的  #wd: $word
+
+#    variables:
+#      es: $excepted_result
+    api: api/baidu_search_api.yml
+    extract:
+      title: <title>(.+?)</title>
+    validate:
+     - eq: [$title,$excepted_result]

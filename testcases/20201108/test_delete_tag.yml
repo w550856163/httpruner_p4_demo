@@ -11,12 +11,14 @@
 #写法二：引用 testcase
 - test:
     name: exec get_access_token api
-    testcase: testcases/20201108/test_get_access_token.yml
-    extract:
+    testcase: testcases/20201108/test_get_access_token.yml   #测试用例之间支持相互引用：
+    extract:  #在引用的时候，把上一个用例中的部分参数在下一个用例中使用
       - token_id
 
 - test:
     name: exec delete_tag api
+    #variables:
+   #   token$token_id
     api: api/delet_tag.yml
     extract:
       error_code: content.errcode

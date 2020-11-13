@@ -1,0 +1,10 @@
+# 参数化讲解
+config:
+  name: testsuite_demo_03
+
+testcases:
+  test_baidu_search:
+    testcase: testcases/20201108/test_baidu_search.yml
+    parameters:
+    #  search_word-excepted_result: ${parameterize(data/test_data.csv)}
+       search_word-excepted_result: ${get_params_by_mysql(test_baidu_search)}

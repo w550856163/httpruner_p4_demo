@@ -1,0 +1,14 @@
+# 参数化讲解
+config:
+  name: testsuite_demo_03
+
+testcases:
+  test_baidu_search:
+    testcase: testcases/20201108/test_baidu_search.yml
+    parameters:
+      search_word: ${get_random_name()}  #标记8
+    #search_word: ${get_random_phonenum(133,134,135,136)} #标记7
+   # search_word: ${get_random_string(123456abcdef,6)} #标记4 yml文件中函数参数不能加特殊字符串
+ #   search_word: ${get_random_int(0,1000,10)}  #调用debugtalk里面的函数get_random_int 搜索10次
+ #   search_word: ${get_random_int(0,1000,count=5)}  #调用debugtalk里面的函数get_random_int 搜索5次
+#    search_word-excepted_result: ${get_params02()}  #调用debugtalk里面的函数get_params02()

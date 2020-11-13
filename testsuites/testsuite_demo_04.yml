@@ -1,0 +1,10 @@
+# 参数化讲解
+config:
+  name: testsuite_demo_03
+
+testcases:
+  test_baidu_search:
+    testcase: testcases/20201108/test_baidu_search.yml
+    parameters:
+      search_word-excepted_result: [['newdream','newdream_百度搜索'],['12306','12306_百度搜索'],['火车票','火车票_百度搜索']]
+#      search_word: ['newdream','12306','火车票']
