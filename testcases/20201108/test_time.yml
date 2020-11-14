@@ -1,0 +1,16 @@
+- config:      #使用(- ) 表示数组，同一缩进的所有项属于一个数组
+    name: 验证能否打开湖南新梦想主页
+    base_url: http://www.hnxmxit.com
+    export:
+      - title
+
+- test:  # 测试步骤名称
+    name: 接口名称 湖南新梦想主页接口
+   # times: 3
+    request:  #键值对，对着下面2个值
+      url: /   #键值对
+      method: GET   #键值对
+    extract:
+      title: <title>(.+?)</title>
+    validate:  #断言
+      - eq: ["status_code",200]

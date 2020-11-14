@@ -120,6 +120,11 @@ def get_params_by_mysql(case_name):
         list_case_data[i] = list(list_case_data[i])
     return list_case_data
 
+def to_ISO_8859_1(str):
+    return str.encode('utf8').decode('iso8859-1')
+def to_UTF_8(str):
+    return str.encode('iso8859-1').decode('utf8')
+
 #if __name__=='__main__':
    #print(get_random_phonenum(['131', '132', '133']))# 标记5
    #print( get_random_phonenum('131','132')  ) #标记6

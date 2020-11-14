@@ -6,7 +6,7 @@ request:
   url: /cgi-bin/token
   params:
     grant_type: client_credential
-    appid: wx55614004f367f8ca
-    secret: 65515b46dd758dfdb09420bb7db2c67f
+    appid: wx0e7b21a28056b1bf
+    secret: afd400e152a4dee860c3f189dffc53bd
 validate:  # 一般这里做非业务的断言 简单
   - eq: ['status_code',200]

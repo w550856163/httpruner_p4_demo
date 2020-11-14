@@ -1,0 +1,53 @@
+## 模拟get请求   # 处理方式1 把预期结果转换成iso_8859_1
+#- config:
+#    name: 验证能否打开湖南新梦想主页
+#    base_url: http://www.hnxmxit.com
+##    variables:
+##      excepted_result: ${to_ISO_8859_1(湖南新梦想软测教育咨询有限公司_)}
+#    export:
+#      - title
+#
+#- test:  # 测试步骤名称
+#    name: 接口名称 湖南新梦想主页接口
+#    variables:
+#       excepted_result: ${to_ISO_8859_1(湖南新梦想软测教育咨询有限公司_)}
+#    request:
+#      url: /
+#      method: GET
+#    extract:
+#      title: <title>(.+?)</title>
+#    validate:
+#      - eq: ["status_code",200]
+#      - eq: [$title,$excepted_result]
+
+# 模拟get请求
+- config:
+    name: 验证能否打开湖南新梦想主页
+    base_url: http://www.hnxmxit.com
+    variables:
+      excepted_result: ${to_ISO_8859_1(湖南新梦想软测教育咨询有限公司_)}
+    export:
+      - utf_8_title
+
+- test:  # 测试步骤名称
+    name: 接口名称 湖南新梦想主页接口
+    request:
+      url: /
+      method: GET
+    extract:
+      title: <title>(.+?)</title>
+    validate:
+      - eq: ["status_code",200]
+
+- test:  # 测试步骤名称
+    name: 接口名称 湖南新梦想主页接口
+    variables:
+      utf_8_title: ${to_UTF_8($title)}
+    request:
+      url: /
+      method: GET
+    validate:
+      - eq: ["status_code",200]
+      - eq: [$utf_8_title,'湖南新梦想软测教育咨询有限公司_']
+sudo  ln  -s  /Users/w550856/Library/Python/3.8/bin/har2case /usr/bin/hrun
+
