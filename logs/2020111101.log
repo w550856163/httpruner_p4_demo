@@ -1,0 +1,37 @@
+[32m[47mINFO    [0m [32mHttpRunner version: 2.5.7[0m
+[32m[47mINFO    [0m [32mLoading environment variables from /Users/w550856/pythonProject/httprunner_p4_demo/.env[0m
+[32m[47mINFO    [0m [32mStart to run testcase: test_baidu_search[0m
+[32m[47mINFO    [0m [32mGET https://www.baidu.com/s[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 1215.8 ms, response_length: 536181 bytes
+[0m
+[32m[47mINFO    [0m [32mStart to run testcase: test_baidu_search[0m
+[32m[47mINFO    [0m [32mGET https://www.baidu.com/s[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 1113.73 ms, response_length: 492665 bytes
+[0m
+[32m[47mINFO    [0m [32mStart to run testcase: test_baidu_search[0m
+[32m[47mINFO    [0m [32mGET https://www.baidu.com/s[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 1045.31 ms, response_length: 526568 bytes
+[0m
+[32m[47mINFO    [0m [32m
+==================== Output ====================
+Variable         : Value
+---------------- : -----------------------------
+title            : 潘淑珍_百度搜索
+------------------------------------------------
+[0m
+[32m[47mINFO    [0m [32m
+==================== Output ====================
+Variable         : Value
+---------------- : -----------------------------
+title            : 周淑珍_百度搜索
+------------------------------------------------
+[0m
+[32m[47mINFO    [0m [32m
+==================== Output ====================
+Variable         : Value
+---------------- : -----------------------------
+title            : 秦峰_百度搜索
+------------------------------------------------
+[0m
+[32m[47mINFO    [0m [32mStart to render Html report ...[0m
+[32m[47mINFO    [0m [32mGenerated Html report: ./reports/result.html[0m

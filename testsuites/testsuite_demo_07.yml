@@ -1,0 +1,23 @@
+# 参数化讲解
+config:
+  name: testsuite_demo_07
+
+testcases:
+  test_baidu_search01:
+    testcase: testcases/20201111/test_baidu_search.yml
+#    parameters:指定变量.env的详细路径     # hrun --dot-env-path ./config.ini ./testsuites/testsuite_demo_07.yml
+#      search_word: ${get_random_name()}
+    variables:
+      search_word: ["12306"]
+  test_baidu_search02:
+    testcase: testcases/20201111/test_baidu_search.yml
+    variables:
+      search_word: ["李琴"]
+  test_baidu_search03:
+    testcase: testcases/20201111/test_baidu_search.yml
+    variables:
+      search_word: ["邓瑜"]
+#      search_word: ${get_random_phonenum(133,134,135,136)}
+#      search_word: ${get_random_string(123456abcdef,6)} # yml文件中函数参数不能加特殊字符串
+#      search_word: ${get_random_int(0,1000,count=5)}
+#      search_word-excepted_result: ${get_params02()}

@@ -1,0 +1,111 @@
+Metadata-Version: 2.1
+Name: httprunner
+Version: 3.1.4
+Summary: One-stop solution for HTTP(S) testing.
+Home-page: https://github.com/httprunner/httprunner
+License: Apache-2.0
+Keywords: HTTP,api,test,requests,locustio
+Author: debugtalk
+Author-email: debugtalk@gmail.com
+Requires-Python: >=3.6,<4.0
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: MacOS
+Classifier: Operating System :: Microsoft :: Windows
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Topic :: Software Development :: Libraries :: Python Modules
+Classifier: Topic :: Software Development :: Quality Assurance
+Classifier: Topic :: Software Development :: Testing
+Provides-Extra: allure
+Provides-Extra: locust
+Provides-Extra: upload
+Requires-Dist: allure-pytest (>=2.8.16,<3.0.0); extra == "allure"
+Requires-Dist: black (>=19.10b0,<20.0)
+Requires-Dist: filetype (>=1.0.7,<2.0.0); extra == "upload"
+Requires-Dist: jinja2 (>=2.10.3,<3.0.0)
+Requires-Dist: jmespath (>=0.9.5,<0.10.0)
+Requires-Dist: locust (>=1.0.3,<2.0.0); extra == "locust"
+Requires-Dist: loguru (>=0.4.1,<0.5.0)
+Requires-Dist: pydantic (>=1.4,<2.0)
+Requires-Dist: pytest (>=5.4.2,<6.0.0)
+Requires-Dist: pytest-html (>=2.1.1,<3.0.0)
+Requires-Dist: pyyaml (>=5.1.2,<6.0.0)
+Requires-Dist: requests (>=2.22.0,<3.0.0)
+Requires-Dist: requests-toolbelt (>=0.9.1,<0.10.0); extra == "upload"
+Requires-Dist: sentry-sdk (>=0.14.4,<0.15.0)
+Project-URL: Documentation, https://docs.httprunner.org
+Project-URL: Repository, https://github.com/httprunner/httprunner
+Description-Content-Type: text/markdown
+
+
+# HttpRunner
+
+[![downloads](https://pepy.tech/badge/httprunner)](https://pepy.tech/project/httprunner)
+[![unittest](https://github.com/httprunner/httprunner/workflows/unittest/badge.svg
+)](https://github.com/httprunner/httprunner/actions)
+[![integration-test](https://github.com/httprunner/httprunner/workflows/integration_test/badge.svg
+)](https://github.com/httprunner/httprunner/actions)
+[![codecov](https://codecov.io/gh/httprunner/httprunner/branch/master/graph/badge.svg)](https://codecov.io/gh/httprunner/httprunner)
+[![pypi version](https://img.shields.io/pypi/v/httprunner.svg)](https://pypi.python.org/pypi/httprunner)
+[![pyversions](https://img.shields.io/pypi/pyversions/httprunner.svg)](https://pypi.python.org/pypi/httprunner)
+[![TesterHome](https://img.shields.io/badge/TTF-TesterHome-2955C5.svg)](https://testerhome.com/github_statistics)
+
+*HttpRunner* is a simple & elegant, yet powerful HTTP(S) testing framework. Enjoy! ✨ 🚀 ✨
+
+## Design Philosophy
+
+- Convention over configuration
+- ROI matters
+- Embrace open source, leverage [`requests`][requests], [`pytest`][pytest], [`pydantic`][pydantic], [`allure`][allure] and [`locust`][locust].
+
+## Key Features
+
+- Inherit all powerful features of [`requests`][requests], just have fun to handle HTTP(S) in human way.
+- Define testcase in YAML or JSON format, run with [`pytest`][pytest] in concise and elegant manner. 
+- Record and generate testcases with [`HAR`][HAR] support.
+- Supports `variables`/`extract`/`validate`/`hooks` mechanisms to create extremely complex test scenarios.
+- With `debugtalk.py` plugin, any function can be used in any part of your testcase.
+- With [`jmespath`][jmespath], extract and validate json response has never been easier.
+- With [`pytest`][pytest], hundreds of plugins are readily available. 
+- With [`allure`][allure], test report can be pretty nice and powerful.
+- With reuse of [`locust`][locust], you can run performance test without extra work.
+- CLI command supported, perfect combination with `CI/CD`.
+
+## Sponsors
+
+Thank you to all our sponsors! ✨🍰✨ ([become a sponsor](docs/sponsors.md))
+
+### 金牌赞助商（Gold Sponsor）
+
+[<img src="docs/assets/hogwarts.png" alt="霍格沃兹测试学院" width="400">](https://ceshiren.com/)
+
+> [霍格沃兹测试学院](https://ceshiren.com/) 是业界领先的测试开发技术高端教育品牌，隶属于测吧（北京）科技有限公司。学院课程均由 BAT 一线测试大咖执教，提供实战驱动的接口自动化测试、移动自动化测试、性能测试、持续集成与 DevOps 等技术培训，以及测试开发优秀人才内推服务。[点击学习!](https://ke.qq.com/course/254956?flowToken=1014690)
+
+霍格沃兹测试学院是 HttpRunner 的首家金牌赞助商。
+
+### 开源服务赞助商（Open Source Sponsor）
+
+[<img src="docs/assets/sentry-logo-black.svg" alt="Sentry" width="150">](https://sentry.io/_/open-source/)
+
+HttpRunner is in Sentry Sponsored plan.
+
+## Subscribe
+
+关注 HttpRunner 的微信公众号，第一时间获得最新资讯。
+
+![](docs/assets/qrcode.jpg)
+
+[requests]: http://docs.python-requests.org/en/master/
+[pytest]: https://docs.pytest.org/
+[pydantic]: https://pydantic-docs.helpmanual.io/
+[locust]: http://locust.io/
+[jmespath]: https://jmespath.org/
+[allure]: https://docs.qameta.io/allure/
+[HAR]: http://httparchive.org/
+
+
+

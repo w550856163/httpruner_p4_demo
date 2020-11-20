@@ -1,0 +1,161 @@
+[32m[47mINFO    [0m [32mHttpRunner version: 2.5.7[0m
+[32m[47mINFO    [0m [32mLoading environment variables from /Users/w550856/pythonProject/httprunner_p4_demo/.env[0m
+[36m[47mDEBUG   [0m [36mSet OS environment variable: BASE_URL[0m
+[36m[47mDEBUG   [0m [36mSet OS environment variable: #BASE_URL[0m
+[32m[47mINFO    [0m [32mStart to run testcase: test_baidu_search[0m
+[32m[47mINFO    [0m [32mGET https://www.baidu.com/s[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'params': {'wd': '张静'}, 'headers': {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> GET https://www.baidu.com/s
+> kwargs: {'params': {'wd': '张静'}, 'headers': {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'https://www.baidu.com/s?wd=%E5%BC%A0%E9%9D%99'
+method           : 'GET'
+headers          : {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36', 'Accept-Encoding': 'gzip, deflate', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'Connection': 'keep-alive'}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'https://www.baidu.com/s?wd=%E5%BC%A0%E9%9D%99'
+status_code      : 200
+reason           : 'OK'
+cookies          : <RequestsCookieJar[Cookie(version=0, name='BAIDUID', value='0545117992B3682E855D4130B648DFD5:FG=1', port=None, port_specified=False, domain='.baidu.com', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=False, expires=1637333796, discard=False, comment='bd', comment_url=None, rest={}, rfc2109=True), Cookie(version=0, name='BIDUPSID', value='0545117992B3682EEA93DA5B370DC9F5', port=None, port_specified=False, domain='.baidu.com', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=False, expires=3753281443, discard=False, comment=None, comment_url=None, rest={}, rfc2109=False), Cookie(version=0, name='H_PS_PSSID', value='32815_1422_33045_33123_33058_33098_33101_32962_26350', port=None, port_specified=False, domain='.baidu.com', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=False, expires=None, discard=True, comment=None, comment_url=None, rest={}, rfc2109=False), Cookie(version=0, name='PSINO', value='7', port=None, port_specified=False, domain='.baidu.com', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=False, expires=None, discard=True, comment=None, comment_url=None, rest={}, rfc2109=False), Cookie(version=0, name='PSTM', value='1605797796', port=None, port_specified=False, domain='.baidu.com', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=False, expires=3753281443, discard=False, comment=None, comment_url=None, rest={}, rfc2109=False), Cookie(version=0, name='delPer', value='0', port=None, port_specified=False, domain='.baidu.com', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=False, expires=None, discard=True, comment=None, comment_url=None, rest={}, rfc2109=False), Cookie(version=0, name='BDSVRTM', value='10', port=None, port_specified=False, domain='www.baidu.com', domain_specified=False, domain_initial_dot=False, path='/', path_specified=True, secure=False, expires=None, discard=True, comment=None, comment_url=None, rest={}, rfc2109=False), Cookie(version=0, name='BD_CK_SAM', value='1', port=None, port_specified=False, domain='www.baidu.com', domain_specified=False, domain_initial_dot=False, path='/', path_specified=True, secure=False, expires=None, discard=True, comment=None, comment_url=None, rest={}, rfc2109=False)]>
+encoding         : 'utf-8'
+headers          : {'Bdpagetype': '3', 'Bdqid': '0xae68910800007d1a', 'Cache-Control': 'private', 'Ckpacknum': '2', 'Ckrndstr': '800007d1a', 'Connection': 'keep-alive', 'Content-Encoding': 'gzip', 'Content-Type': 'text/html;charset=utf-8', 'Date': 'Thu, 19 Nov 2020 14:56:36 GMT', 'P3p': 'CP=" OTI DSP COR IVA OUR IND COM ", CP=" OTI DSP COR IVA OUR IND COM "', 'Server': 'BWS/1.1', 'Set-Cookie': 'BAIDUID=0545117992B3682EEA93DA5B370DC9F5:FG=1; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com, BIDUPSID=0545117992B3682EEA93DA5B370DC9F5; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com, PSTM=1605797796; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com, BAIDUID=0545117992B3682E855D4130B648DFD5:FG=1; max-age=31536000; expires=Fri, 19-Nov-21 14:56:36 GMT; domain=.baidu.com; path=/; version=1; comment=bd, delPer=0; path=/; domain=.baidu.com, BD_CK_SAM=1;path=/, PSINO=7; domain=.baidu.com; path=/, BDSVRTM=10; path=/, H_PS_PSSID=32815_1422_33045_33123_33058_33098_33101_32962_26350; path=/; domain=.baidu.com', 'Strict-Transport-Security': 'max-age=172800', 'Traceid': '1605797796074720692212567454223723167002', 'Vary': 'Accept-Encoding', 'X-Ua-Compatible': 'IE=Edge,chrome=1', 'Transfer-Encoding': 'chunked'}
+content_type     : 'text/html;charset=utf-8'
+body             : '<!DOCTYPE html>\n<!--STATUS OK-->\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\t\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\t\n\n\n\n\n<html>\n\t<head>\n\t\t\n\t\t<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">\n\t\t<meta http-equiv="content-type" content="text/html;charset=utf-8">\n\t\t<meta content="always" name="referrer">\n        <meta name="theme-color" content="#2932e1">\n        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />\n        < ... OMITTED 521093 CHARACTORS ...'
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 970.26 ms, response_length: 527163 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: <title>(.+?)</title>	=> 张静_百度搜索[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36m
+validate: status_code equals 200(int)	==> pass[0m
+[32m[47mINFO    [0m [32mStart to run testcase: test_baidu_search[0m
+[32m[47mINFO    [0m [32mGET https://www.baidu.com/s[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'params': {'wd': '张春梅'}, 'headers': {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> GET https://www.baidu.com/s
+> kwargs: {'params': {'wd': '张春梅'}, 'headers': {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'https://www.baidu.com/s?wd=%E5%BC%A0%E6%98%A5%E6%A2%85'
+method           : 'GET'
+headers          : {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36', 'Accept-Encoding': 'gzip, deflate', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'Connection': 'keep-alive'}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'https://www.baidu.com/s?wd=%E5%BC%A0%E6%98%A5%E6%A2%85'
+status_code      : 200
+reason           : 'OK'
+cookies          : <RequestsCookieJar[Cookie(version=0, name='BAIDUID', value='E2D057D681086AF3D32061F642ED7B9C:FG=1', port=None, port_specified=False, domain='.baidu.com', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=False, expires=1637333797, discard=False, comment='bd', comment_url=None, rest={}, rfc2109=True), Cookie(version=0, name='BIDUPSID', value='E2D057D681086AF37A904CE783F2A965', port=None, port_specified=False, domain='.baidu.com', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=False, expires=3753281444, discard=False, comment=None, comment_url=None, rest={}, rfc2109=False), Cookie(version=0, name='H_PS_PSSID', value='1459_33048_33117_33058_31253_33098_33101_32962_26350', port=None, port_specified=False, domain='.baidu.com', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=False, expires=None, discard=True, comment=None, comment_url=None, rest={}, rfc2109=False), Cookie(version=0, name='PSINO', value='7', port=None, port_specified=False, domain='.baidu.com', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=False, expires=None, discard=True, comment=None, comment_url=None, rest={}, rfc2109=False), Cookie(version=0, name='PSTM', value='1605797797', port=None, port_specified=False, domain='.baidu.com', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=False, expires=3753281444, discard=False, comment=None, comment_url=None, rest={}, rfc2109=False), Cookie(version=0, name='delPer', value='0', port=None, port_specified=False, domain='.baidu.com', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=False, expires=None, discard=True, comment=None, comment_url=None, rest={}, rfc2109=False), Cookie(version=0, name='BDSVRTM', value='12', port=None, port_specified=False, domain='www.baidu.com', domain_specified=False, domain_initial_dot=False, path='/', path_specified=True, secure=False, expires=None, discard=True, comment=None, comment_url=None, rest={}, rfc2109=False), Cookie(version=0, name='BD_CK_SAM', value='1', port=None, port_specified=False, domain='www.baidu.com', domain_specified=False, domain_initial_dot=False, path='/', path_specified=True, secure=False, expires=None, discard=True, comment=None, comment_url=None, rest={}, rfc2109=False)]>
+encoding         : 'utf-8'
+headers          : {'Bdpagetype': '3', 'Bdqid': '0xe19a1e62000010a7', 'Cache-Control': 'private', 'Ckpacknum': '2', 'Ckrndstr': '2000010a7', 'Connection': 'keep-alive', 'Content-Encoding': 'gzip', 'Content-Type': 'text/html;charset=utf-8', 'Date': 'Thu, 19 Nov 2020 14:56:37 GMT', 'P3p': 'CP=" OTI DSP COR IVA OUR IND COM ", CP=" OTI DSP COR IVA OUR IND COM "', 'Server': 'BWS/1.1', 'Set-Cookie': 'BAIDUID=E2D057D681086AF37A904CE783F2A965:FG=1; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com, BIDUPSID=E2D057D681086AF37A904CE783F2A965; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com, PSTM=1605797797; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com, BAIDUID=E2D057D681086AF3D32061F642ED7B9C:FG=1; max-age=31536000; expires=Fri, 19-Nov-21 14:56:37 GMT; domain=.baidu.com; path=/; version=1; comment=bd, delPer=0; path=/; domain=.baidu.com, BD_CK_SAM=1;path=/, PSINO=7; domain=.baidu.com; path=/, BDSVRTM=12; path=/, H_PS_PSSID=1459_33048_33117_33058_31253_33098_33101_32962_26350; path=/; domain=.baidu.com', 'Strict-Transport-Security': 'max-age=172800', 'Traceid': '1605797797024395597816256339211202859175', 'Vary': 'Accept-Encoding', 'X-Ua-Compatible': 'IE=Edge,chrome=1', 'Transfer-Encoding': 'chunked'}
+content_type     : 'text/html;charset=utf-8'
+body             : '<!DOCTYPE html>\n<!--STATUS OK-->\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\t\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\t\n\n\n\n\n<html>\n\t<head>\n\t\t\n\t\t<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">\n\t\t<meta http-equiv="content-type" content="text/html;charset=utf-8">\n\t\t<meta content="always" name="referrer">\n        <meta name="theme-color" content="#2932e1">\n        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />\n        < ... OMITTED 515602 CHARACTORS ...'
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 1172.75 ms, response_length: 522546 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: <title>(.+?)</title>	=> 张春梅_百度搜索[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36m
+validate: status_code equals 200(int)	==> pass[0m
+[32m[47mINFO    [0m [32mStart to run testcase: test_baidu_search[0m
+[32m[47mINFO    [0m [32mGET https://www.baidu.com/s[0m
+[36m[47mDEBUG   [0m [36mrequest kwargs(raw): {'params': {'wd': '王宁'}, 'headers': {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'}, 'verify': True}[0m
+[36m[47mDEBUG   [0m [36mprocessed request:
+> GET https://www.baidu.com/s
+> kwargs: {'params': {'wd': '王宁'}, 'headers': {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9'}, 'verify': True, 'timeout': 120}[0m
+[36m[47mDEBUG   [0m [36m
+================== request details ==================
+url              : 'https://www.baidu.com/s?wd=%E7%8E%8B%E5%AE%81'
+method           : 'GET'
+headers          : {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36', 'Accept-Encoding': 'gzip, deflate', 'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9', 'Connection': 'keep-alive'}
+[0m
+[36m[47mDEBUG   [0m [36m
+================== response details ==================
+ok               : True
+url              : 'https://www.baidu.com/s?wd=%E7%8E%8B%E5%AE%81'
+status_code      : 200
+reason           : 'OK'
+cookies          : <RequestsCookieJar[Cookie(version=0, name='BAIDUID', value='71E59542112813074AF62F13C6B2AC89:FG=1', port=None, port_specified=False, domain='.baidu.com', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=False, expires=1637333798, discard=False, comment='bd', comment_url=None, rest={}, rfc2109=True), Cookie(version=0, name='BAIDUID_BFESS', value='71E59542112813076150A1AB29178954:FG=1', port=None, port_specified=False, domain='.baidu.com', domain_specified=True, domain_initial_dot=False, path='/', path_specified=True, secure=True, expires=3753281445, discard=False, comment=None, comment_url=None, rest={'SameSite': 'None'}, rfc2109=False), Cookie(version=0, name='BIDUPSID', value='71E59542112813076150A1AB29178954', port=None, port_specified=False, domain='.baidu.com', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=False, expires=3753281445, discard=False, comment=None, comment_url=None, rest={}, rfc2109=False), Cookie(version=0, name='H_PS_PSSID', value='32815_1445_33046_33060_31253_33099_33100_32962_32845_26350', port=None, port_specified=False, domain='.baidu.com', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=False, expires=None, discard=True, comment=None, comment_url=None, rest={}, rfc2109=False), Cookie(version=0, name='PSINO', value='7', port=None, port_specified=False, domain='.baidu.com', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=False, expires=None, discard=True, comment=None, comment_url=None, rest={}, rfc2109=False), Cookie(version=0, name='PSTM', value='1605797798', port=None, port_specified=False, domain='.baidu.com', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=False, expires=3753281445, discard=False, comment=None, comment_url=None, rest={}, rfc2109=False), Cookie(version=0, name='delPer', value='0', port=None, port_specified=False, domain='.baidu.com', domain_specified=True, domain_initial_dot=True, path='/', path_specified=True, secure=False, expires=None, discard=True, comment=None, comment_url=None, rest={}, rfc2109=False), Cookie(version=0, name='BDSVRTM', value='10', port=None, port_specified=False, domain='www.baidu.com', domain_specified=False, domain_initial_dot=False, path='/', path_specified=True, secure=False, expires=None, discard=True, comment=None, comment_url=None, rest={}, rfc2109=False), Cookie(version=0, name='BD_CK_SAM', value='1', port=None, port_specified=False, domain='www.baidu.com', domain_specified=False, domain_initial_dot=False, path='/', path_specified=True, secure=False, expires=None, discard=True, comment=None, comment_url=None, rest={}, rfc2109=False)]>
+encoding         : 'utf-8'
+headers          : {'Bdpagetype': '3', 'Bdqid': '0xd5d7d6000000c5e5', 'Cache-Control': 'private', 'Ckpacknum': '2', 'Ckrndstr': '00000c5e5', 'Connection': 'keep-alive', 'Content-Encoding': 'gzip', 'Content-Type': 'text/html;charset=utf-8', 'Date': 'Thu, 19 Nov 2020 14:56:38 GMT', 'P3p': 'CP=" OTI DSP COR IVA OUR IND COM ", CP=" OTI DSP COR IVA OUR IND COM "', 'Server': 'BWS/1.1', 'Set-Cookie': 'BAIDUID=71E59542112813076150A1AB29178954:FG=1; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com, BIDUPSID=71E59542112813076150A1AB29178954; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com, PSTM=1605797798; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com, BAIDUID=71E59542112813074AF62F13C6B2AC89:FG=1; max-age=31536000; expires=Fri, 19-Nov-21 14:56:38 GMT; domain=.baidu.com; path=/; version=1; comment=bd, delPer=0; path=/; domain=.baidu.com, BD_CK_SAM=1;path=/, PSINO=7; domain=.baidu.com; path=/, BDSVRTM=10; path=/, H_PS_PSSID=32815_1445_33046_33060_31253_33099_33100_32962_32845_26350; path=/; domain=.baidu.com, BAIDUID_BFESS=71E59542112813076150A1AB29178954:FG=1; Path=/; Domain=baidu.com; Expires=Thu, 31 Dec 2037 23:55:55 GMT; Max-Age=2147483647; Secure; SameSite=None', 'Strict-Transport-Security': 'max-age=172800', 'Traceid': '1605797798064018714615409019945559836133', 'Vary': 'Accept-Encoding', 'X-Ua-Compatible': 'IE=Edge,chrome=1', 'Transfer-Encoding': 'chunked'}
+content_type     : 'text/html;charset=utf-8'
+body             : '<!DOCTYPE html>\n<!--STATUS OK-->\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\t\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\t\n\n\n\n\n<html>\n\t<head>\n\t\t\n\t\t<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">\n\t\t<meta http-equiv="content-type" content="text/html;charset=utf-8">\n\t\t<meta content="always" name="referrer">\n        <meta name="theme-color" content="#2932e1">\n        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />\n        < ... OMITTED 509961 CHARACTORS ...'
+[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 578.39 ms, response_length: 518403 bytes
+[0m
+[36m[47mDEBUG   [0m [36mstart to extract from response object.[0m
+[36m[47mDEBUG   [0m [36mextract: <title>(.+?)</title>	=> 王宁_百度搜索[0m
+[36m[47mDEBUG   [0m [36mstart to validate.[0m
+[36m[47mDEBUG   [0m [36mextract: status_code	=> 200[0m
+[36m[47mDEBUG   [0m [36m
+validate: status_code equals 200(int)	==> pass[0m
+[32m[47mINFO    [0m [32m
+==================== Output ====================
+Variable         : Value
+---------------- : -----------------------------
+title            : 张静_百度搜索
+------------------------------------------------
+[0m
+[32m[47mINFO    [0m [32m
+==================== Output ====================
+Variable         : Value
+---------------- : -----------------------------
+title            : 张春梅_百度搜索
+------------------------------------------------
+[0m
+[32m[47mINFO    [0m [32m
+==================== Output ====================
+Variable         : Value
+---------------- : -----------------------------
+title            : 王宁_百度搜索
+------------------------------------------------
+[0m
+[36m[47mDEBUG   [0m [36mNo html report template specified, use default.[0m
+[32m[47mINFO    [0m [32mStart to render Html report ...[0m
+[32m[47mINFO    [0m [32mGenerated Html report: ./reports/result.html[0m
+[32m[47mINFO    [0m [32mHttpRunner version: 2.5.7[0m
+[32m[47mINFO    [0m [32mLoading environment variables from /Users/w550856/pythonProject/httprunner_p4_demo/.env[0m
+[32m[47mINFO    [0m [32mStart to run testcase: test_baidu_search[0m
+[32m[47mINFO    [0m [32mGET https://www.baidu.com/s[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 592.18 ms, response_length: 482329 bytes
+[0m
+[32m[47mINFO    [0m [32mStart to run testcase: test_baidu_search[0m
+[32m[47mINFO    [0m [32mGET https://www.baidu.com/s[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 478.31 ms, response_length: 410855 bytes
+[0m
+[32m[47mINFO    [0m [32mStart to run testcase: test_baidu_search[0m
+[32m[47mINFO    [0m [32mGET https://www.baidu.com/s[0m
+[32m[47mINFO    [0m [32mstatus_code: 200, response_time(ms): 939.49 ms, response_length: 427792 bytes
+[0m
+[32m[47mINFO    [0m [32m
+==================== Output ====================
+Variable         : Value
+---------------- : -----------------------------
+title            : 罗秀梅_百度搜索
+------------------------------------------------
+[0m
+[32m[47mINFO    [0m [32m
+==================== Output ====================
+Variable         : Value
+---------------- : -----------------------------
+title            : 关建军_百度搜索
+------------------------------------------------
+[0m
+[32m[47mINFO    [0m [32m
+==================== Output ====================
+Variable         : Value
+---------------- : -----------------------------
+title            : 刘颖_百度搜索
+------------------------------------------------
+[0m
+[32m[47mINFO    [0m [32mStart to render Html report ...[0m
+[32m[47mINFO    [0m [32mGenerated Html report: ./reports/result.html[0m

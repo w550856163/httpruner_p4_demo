@@ -1,5 +1,7 @@
 {
     "testcase":[
+        "testcases/20201108/test_baidu_search.yml",
+        "testcases/20201108/test_baidu_search.yml",
         "testcases/20201108/test_baidu_search.yml"
     ]
 }

@@ -13,5 +13,5 @@
     api: api/baidu_search_api.yml
     extract:
       title: <title>(.+?)</title>
-    validate:
-     - eq: [$title,$excepted_result]
+#    validate:
+#     - eq: [$title,$excepted_result]

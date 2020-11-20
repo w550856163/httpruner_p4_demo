@@ -1,0 +1,1364 @@
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> - TestReport</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      color: #333;
+      margin: 0 auto;
+      width: 960px;
+    }
+    #summary {
+      width: 960px;
+      margin-bottom: 20px;
+    }
+    #summary th {
+      background-color: skyblue;
+      padding: 5px 12px;
+    }
+    #summary td {
+      background-color: lightblue;
+      text-align: center;
+      padding: 4px 8px;
+    }
+    .details {
+      width: 960px;
+      margin-bottom: 20px;
+    }
+    .details th {
+      background-color: skyblue;
+      padding: 5px 12px;
+    }
+    .details tr .passed {
+      background-color: lightgreen;
+    }
+    .details tr .failed {
+      background-color: red;
+    }
+    .details tr .unchecked {
+      background-color: gray;
+    }
+    .details td {
+      background-color: lightblue;
+      padding: 5px 12px;
+    }
+    .details .detail {
+      background-color: lightgrey;
+      font-size: smaller;
+      padding: 5px 10px;
+      line-height: 20px;
+      text-align: left;
+    }
+    .details .success {
+      background-color: greenyellow;
+    }
+    .details .error {
+      background-color: red;
+    }
+    .details .failure {
+      background-color: salmon;
+    }
+    .details .skipped {
+      background-color: gray;
+    }
+
+    .button {
+      font-size: 1em;
+      padding: 6px;
+      width: 4em;
+      text-align: center;
+      background-color: #06d85f;
+      border-radius: 20px/50px;
+      cursor: pointer;
+      transition: all 0.3s ease-out;
+    }
+    a.button{
+      color: gray;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .button:hover {
+      background: #2cffbd;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      transition: opacity 500ms;
+      visibility: hidden;
+      opacity: 0;
+      line-height: 25px;
+    }
+    .overlay:target {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup {
+      margin: 70px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      width: 50%;
+      position: relative;
+      transition: all 3s ease-in-out;
+    }
+
+    .popup h2 {
+      margin-top: 0;
+      color: #333;
+      font-family: Tahoma, Arial, sans-serif;
+    }
+    .popup .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      transition: all 200ms;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+    }
+    .popup .close:hover {
+      color: #06d85f;
+    }
+    .popup .content {
+      max-height: 80%;
+      overflow: auto;
+      text-align: left;
+    }
+    .popup .separator {
+      color:royalblue
+    }
+
+    @media screen and (max-width: 700px) {
+      .box {
+        width: 70%;
+      }
+      .popup {
+        width: 70%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Test Report: </h1>
+
+  <h2>Summary</h2>
+  <table id="summary">
+    <tr>
+      <th>START AT</th>
+      <td colspan="4">2020-11-20 23:19:18</td>
+    </tr>
+    <tr>
+      <th>DURATION</th>
+      <td colspan="4">2.424 seconds</td>
+    </tr>
+    <tr>
+      <th>PLATFORM</th>
+      <td>HttpRunner 2.4.3 </td>
+      <td>CPython 3.8.2 </td>
+      <td colspan="2">macOS-10.15.7-x86_64-i386-64bit</td>
+    </tr>
+    <tr>
+      <th>STAT</th>
+      <th colspan="2">TESTCASES (success/fail)</th>
+      <th colspan="2">TESTSTEPS (success/fail/error/skip)</th>
+    </tr>
+    <tr>
+      <td>total (details) =></td>
+      <td colspan="2">3 (3/0)</td>
+      <td colspan="2">3 (3/0/0/0)</td>
+    </tr>
+  </table>
+
+  <h2>Details</h2>
+
+  
+  
+  <h3>test_baidu_search01</h3>
+  <table id="suite_1" class="details">
+    <tr>
+      <td>TOTAL: 1</td>
+      <td>SUCCESS: 1</td>
+      <td>FAILED: 0</td>
+      <td>ERROR: 0</td>
+      <td>SKIPPED: 0</td>
+    </tr>
+    <tr>
+      <th>Status</th>
+      <th colspan="2">Name</th>
+      <th>Response Time</th>
+      <th>Detail</th>
+    </tr>
+
+    
+    
+    
+    <tr id="record_1_1">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">exec baidu search api</td>
+      <td style="text-align:center;width:6em;">655.60 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_1_1">log-1</a>
+        <div id="popup_log_1_1_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_1_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: exec baidu search api</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          https://www.baidu.com/s?wd=12306
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          GET
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>accept</strong>: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://www.baidu.com/s?wd=12306
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {'BAIDUID': 'DECF106825710710F3E8A94DE0DE2D56:FG=1', 'BIDUPSID': 'DECF106825710710C74116BC48231286', 'H_PS_PSSID': '32817_1422_33037_33058_31253_33099_33100_32961', 'PSINO': '7', 'PSTM': '1605885559', 'delPer': '0', 'BDSVRTM': '12', 'BD_CK_SAM': '1'}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Bdpagetype</strong>: 3
+                            </div>
+                            
+                            <div>
+                              <strong>Bdqid</strong>: 0xb549e45f00009d5e
+                            </div>
+                            
+                            <div>
+                              <strong>Cache-Control</strong>: private
+                            </div>
+                            
+                            <div>
+                              <strong>Ckpacknum</strong>: 2
+                            </div>
+                            
+                            <div>
+                              <strong>Ckrndstr</strong>: f00009d5e
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Encoding</strong>: gzip
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: text/html;charset=utf-8
+                            </div>
+                            
+                            <div>
+                              <strong>Date</strong>: Fri, 20 Nov 2020 15:19:19 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>P3p</strong>: CP=" OTI DSP COR IVA OUR IND COM ", CP=" OTI DSP COR IVA OUR IND COM "
+                            </div>
+                            
+                            <div>
+                              <strong>Server</strong>: BWS/1.1
+                            </div>
+                            
+                            <div>
+                              <strong>Set-Cookie</strong>: BAIDUID=DECF106825710710C74116BC48231286:FG=1; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com, BIDUPSID=DECF106825710710C74116BC48231286; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com, PSTM=1605885559; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com, BAIDUID=DECF106825710710F3E8A94DE0DE2D56:FG=1; max-age=31536000; expires=Sat, 20-Nov-21 15:19:19 GMT; domain=.baidu.com; path=/; version=1; comment=bd, delPer=0; path=/; domain=.baidu.com, BD_CK_SAM=1;path=/, PSINO=7; domain=.baidu.com; path=/, BDSVRTM=12; path=/, H_PS_PSSID=32817_1422_33037_33058_31253_33099_33100_32961; path=/; domain=.baidu.com
+                            </div>
+                            
+                            <div>
+                              <strong>Strict-Transport-Security</strong>: max-age=172800
+                            </div>
+                            
+                            <div>
+                              <strong>Traceid</strong>: 1605885559068003252213063223290837900638
+                            </div>
+                            
+                            <div>
+                              <strong>Vary</strong>: Accept-Encoding
+                            </div>
+                            
+                            <div>
+                              <strong>X-Ua-Compatible</strong>: IE=Edge,chrome=1
+                            </div>
+                            
+                            <div>
+                              <strong>Transfer-Encoding</strong>: chunked
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            text/html;charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>text</th>
+                        <td>
+                          
+                              <pre>&lt;!DOCTYPE html&gt;
+&lt;!--STATUS OK--&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+&lt;html&gt;
+	&lt;head&gt;
+		
+		&lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge,chrome=1&#34;&gt;
+		&lt;meta http-equiv=&#34;content-type&#34; content=&#34;text/html;charset=utf-8&#34;&gt;
+		&lt;meta content=&#34;always&#34; name=&#34;referrer&#34;&gt;
+        &lt;meta name=&#34;theme-color&#34; content=&#34;#2932e1&#34;&gt;
+        &lt;link rel=&#34;shortcut icon&#34; href=&#34;/favicon.ico&#34; type=&#34;image/x-icon&#34; /&gt;
+        &lt; ... OMITTED 430092 CHARACTORS ...</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>437116</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>655.6</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>397.144</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+  </table>
+  
+  
+  <h3>test_baidu_search02</h3>
+  <table id="suite_2" class="details">
+    <tr>
+      <td>TOTAL: 1</td>
+      <td>SUCCESS: 1</td>
+      <td>FAILED: 0</td>
+      <td>ERROR: 0</td>
+      <td>SKIPPED: 0</td>
+    </tr>
+    <tr>
+      <th>Status</th>
+      <th colspan="2">Name</th>
+      <th>Response Time</th>
+      <th>Detail</th>
+    </tr>
+
+    
+    
+    
+    <tr id="record_2_1">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">exec baidu search api</td>
+      <td style="text-align:center;width:6em;">657.86 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_2_1_1">log-1</a>
+        <div id="popup_log_2_1_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_2_1_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: exec baidu search api</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          https://www.baidu.com/s?wd=%E6%9D%8E%E7%90%B4
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          GET
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>accept</strong>: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://www.baidu.com/s?wd=%E6%9D%8E%E7%90%B4
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {'BAIDUID': 'DECF106825710710D51B29E414C083A8:FG=1', 'BIDUPSID': 'DECF106825710710B75A505F78610B3F', 'H_PS_PSSID': '1451_32856_33060_33098_33101_32961_32846_26350', 'PSINO': '7', 'PSTM': '1605885559', 'delPer': '0', 'BDSVRTM': '18', 'BD_CK_SAM': '1'}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Bdpagetype</strong>: 3
+                            </div>
+                            
+                            <div>
+                              <strong>Bdqid</strong>: 0xa4faa0230001839d
+                            </div>
+                            
+                            <div>
+                              <strong>Cache-Control</strong>: private
+                            </div>
+                            
+                            <div>
+                              <strong>Ckpacknum</strong>: 2
+                            </div>
+                            
+                            <div>
+                              <strong>Ckrndstr</strong>: 30001839d
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Encoding</strong>: gzip
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: text/html;charset=utf-8
+                            </div>
+                            
+                            <div>
+                              <strong>Date</strong>: Fri, 20 Nov 2020 15:19:19 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>P3p</strong>: CP=" OTI DSP COR IVA OUR IND COM ", CP=" OTI DSP COR IVA OUR IND COM "
+                            </div>
+                            
+                            <div>
+                              <strong>Server</strong>: BWS/1.1
+                            </div>
+                            
+                            <div>
+                              <strong>Set-Cookie</strong>: BAIDUID=DECF106825710710B75A505F78610B3F:FG=1; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com, BIDUPSID=DECF106825710710B75A505F78610B3F; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com, PSTM=1605885559; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com, BAIDUID=DECF106825710710D51B29E414C083A8:FG=1; max-age=31536000; expires=Sat, 20-Nov-21 15:19:19 GMT; domain=.baidu.com; path=/; version=1; comment=bd, delPer=0; path=/; domain=.baidu.com, BD_CK_SAM=1;path=/, PSINO=7; domain=.baidu.com; path=/, BDSVRTM=18; path=/, H_PS_PSSID=1451_32856_33060_33098_33101_32961_32846_26350; path=/; domain=.baidu.com
+                            </div>
+                            
+                            <div>
+                              <strong>Strict-Transport-Security</strong>: max-age=172800
+                            </div>
+                            
+                            <div>
+                              <strong>Traceid</strong>: 1605885559019408308211887990238582244253
+                            </div>
+                            
+                            <div>
+                              <strong>Vary</strong>: Accept-Encoding
+                            </div>
+                            
+                            <div>
+                              <strong>X-Ua-Compatible</strong>: IE=Edge,chrome=1
+                            </div>
+                            
+                            <div>
+                              <strong>Transfer-Encoding</strong>: chunked
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            text/html;charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>text</th>
+                        <td>
+                          
+                              <pre>&lt;!DOCTYPE html&gt;
+&lt;!--STATUS OK--&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+&lt;html&gt;
+	&lt;head&gt;
+		
+		&lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge,chrome=1&#34;&gt;
+		&lt;meta http-equiv=&#34;content-type&#34; content=&#34;text/html;charset=utf-8&#34;&gt;
+		&lt;meta content=&#34;always&#34; name=&#34;referrer&#34;&gt;
+        &lt;meta name=&#34;theme-color&#34; content=&#34;#2932e1&#34;&gt;
+        &lt;link rel=&#34;shortcut icon&#34; href=&#34;/favicon.ico&#34; type=&#34;image/x-icon&#34; /&gt;
+        &lt; ... OMITTED 550193 CHARACTORS ...</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>556885</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>657.86</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>234.298</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+  </table>
+  
+  
+  <h3>test_baidu_search03</h3>
+  <table id="suite_3" class="details">
+    <tr>
+      <td>TOTAL: 1</td>
+      <td>SUCCESS: 1</td>
+      <td>FAILED: 0</td>
+      <td>ERROR: 0</td>
+      <td>SKIPPED: 0</td>
+    </tr>
+    <tr>
+      <th>Status</th>
+      <th colspan="2">Name</th>
+      <th>Response Time</th>
+      <th>Detail</th>
+    </tr>
+
+    
+    
+    
+    <tr id="record_3_1">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">exec baidu search api</td>
+      <td style="text-align:center;width:6em;">1058.05 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_3_1_1">log-1</a>
+        <div id="popup_log_3_1_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_3_1_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: exec baidu search api</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          https://www.baidu.com/s?wd=%E9%82%93%E7%91%9C
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          GET
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.111 Safari/537.36
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>accept</strong>: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            https://www.baidu.com/s?wd=%E9%82%93%E7%91%9C
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {'BAIDUID': '5B8A4F7606EE01912E2340FF48CCC0C0:FG=1', 'BIDUPSID': '5B8A4F7606EE0191F5C827A1DDB54FD3', 'H_PS_PSSID': '32819_1443_33059_31660_33099_33101_32961_32845', 'PSINO': '7', 'PSTM': '1605885560', 'delPer': '0', 'BDSVRTM': '13', 'BD_CK_SAM': '1'}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Bdpagetype</strong>: 3
+                            </div>
+                            
+                            <div>
+                              <strong>Bdqid</strong>: 0xb32d447200014b7e
+                            </div>
+                            
+                            <div>
+                              <strong>Cache-Control</strong>: private
+                            </div>
+                            
+                            <div>
+                              <strong>Ckpacknum</strong>: 2
+                            </div>
+                            
+                            <div>
+                              <strong>Ckrndstr</strong>: 200014b7e
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Encoding</strong>: gzip
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: text/html;charset=utf-8
+                            </div>
+                            
+                            <div>
+                              <strong>Date</strong>: Fri, 20 Nov 2020 15:19:20 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>P3p</strong>: CP=" OTI DSP COR IVA OUR IND COM ", CP=" OTI DSP COR IVA OUR IND COM "
+                            </div>
+                            
+                            <div>
+                              <strong>Server</strong>: BWS/1.1
+                            </div>
+                            
+                            <div>
+                              <strong>Set-Cookie</strong>: BAIDUID=5B8A4F7606EE0191F5C827A1DDB54FD3:FG=1; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com, BIDUPSID=5B8A4F7606EE0191F5C827A1DDB54FD3; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com, PSTM=1605885560; expires=Thu, 31-Dec-37 23:55:55 GMT; max-age=2147483647; path=/; domain=.baidu.com, BAIDUID=5B8A4F7606EE01912E2340FF48CCC0C0:FG=1; max-age=31536000; expires=Sat, 20-Nov-21 15:19:20 GMT; domain=.baidu.com; path=/; version=1; comment=bd, delPer=0; path=/; domain=.baidu.com, BD_CK_SAM=1;path=/, PSINO=7; domain=.baidu.com; path=/, BDSVRTM=13; path=/, H_PS_PSSID=32819_1443_33059_31660_33099_33101_32961_32845; path=/; domain=.baidu.com
+                            </div>
+                            
+                            <div>
+                              <strong>Strict-Transport-Security</strong>: max-age=172800
+                            </div>
+                            
+                            <div>
+                              <strong>Traceid</strong>: 1605885560024454580212911050963158125438
+                            </div>
+                            
+                            <div>
+                              <strong>Vary</strong>: Accept-Encoding
+                            </div>
+                            
+                            <div>
+                              <strong>X-Ua-Compatible</strong>: IE=Edge,chrome=1
+                            </div>
+                            
+                            <div>
+                              <strong>Transfer-Encoding</strong>: chunked
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: keep-alive
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            text/html;charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>text</th>
+                        <td>
+                          
+                              <pre>&lt;!DOCTYPE html&gt;
+&lt;!--STATUS OK--&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+&lt;html&gt;
+	&lt;head&gt;
+		
+		&lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;IE=edge,chrome=1&#34;&gt;
+		&lt;meta http-equiv=&#34;content-type&#34; content=&#34;text/html;charset=utf-8&#34;&gt;
+		&lt;meta content=&#34;always&#34; name=&#34;referrer&#34;&gt;
+        &lt;meta name=&#34;theme-color&#34; content=&#34;#2932e1&#34;&gt;
+        &lt;link rel=&#34;shortcut icon&#34; href=&#34;/favicon.ico&#34; type=&#34;image/x-icon&#34; /&gt;
+        &lt; ... OMITTED 434381 CHARACTORS ...</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>441299</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>1058.05</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>254.889</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+  </table>
+  
+</body>

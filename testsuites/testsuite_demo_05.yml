@@ -12,3 +12,4 @@ testcases:
  #   search_word: ${get_random_int(0,1000,10)}  #调用debugtalk里面的函数get_random_int 搜索10次
  #   search_word: ${get_random_int(0,1000,count=5)}  #调用debugtalk里面的函数get_random_int 搜索5次
 #    search_word-excepted_result: ${get_params02()}  #调用debugtalk里面的函数get_params02()
+

@@ -3,11 +3,16 @@
 # @author: liusir
 # @file: debugtalk.py
 # @time: 2020/11/4 8:30 下午
-
+import os
 import random
 import requests
 from faker import Faker
 import pymysql
+
+#设置代理
+os.environ['http_proxy'] = 'http://127.0.0.1:0000'
+os.environ['https_proxy'] = 'https://127.0.0.1:0000'
+
 
 def get_search_word():
     word_list = ['newdream','12306','火车票','新梦想软测教育']

@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'/>
+    <meta name='description' content=''/>
+    <meta name='robots' content='noodp, noydir'/>
+    <meta name='viewport' content='width=device-width, initial-scale=1'/>
+    <meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link href='http://extentreports.com/resx/dist/css/extent.css' type='text/css' rel='stylesheet'/>
+
+    <title>{{ html_report_name }} - TestReport</title>
+
+    <style type='text/css'>
+        .node.level-1 ul {
+            display: none;
+        }
+
+        .node.level-1.active ul {
+            display: block;
+        }
+
+        .card-panel.environment th:first-child {
+            width: 30%;
+        }
+        .separator {
+            color:royalblue;
+        }
+        #test-collection li, #category-collection li, #exception-collection li{
+            padding: 15px 20px;
+        }
+        .code-block {
+            border: 1px solid #ebedef;
+            border-radius: 2px;
+            color: #222 !important;
+            font-family: Consolas, monospace;
+            font-size: 13px;
+            margin: 0;
+            padding: 5px;
+            overflow: auto;
+        }
+        #checkvalue td:first-child,tr:first-child {
+            width: 150px
+        }
+        #checkvalue td:nth-child(5),tr:nth-child(5) {
+            width: 60px
+        }
+        #checkvalue td:nth-child(2),tr:nth-child(2) {
+            width: 60px
+        }
+        #checkvalue td:nth-child(3),tr:nth-child(3) {
+            min-width: 100px;
+        }
+        #checkvalue td:nth-child(4),tr:nth-child(4) {
+            min-width: 100px;
+        }
+        .noncar-seventy-five {
+            display: inline-block;
+            width: 100%;
+            float: left;
+            height: 200px;
+        }
+        .noncar-wrap {
+            width: 50%;
+            display: inline-block;
+            float: left;
+        }
+        .noncar-inside, .noncar-inside-last {
+            border-radius: 4px;
+            height: 200px;
+        }
+        .noncar-title {
+            height: 40px;
+        }
+        .noncar-content {
+            margin-bottom: 40px;
+        }
+        .noncar-content-l, .noncar-content-r {
+            display: inline-block;
+            height: 140px;
+            float: left;
+        }
+        .noncar-content-r {
+            width: 60%;
+        }
+        .noncar-content-l {
+            width: 35%;
+            padding-top: 30px;
+        }
+        .panel-name {
+            font-size: 16px;
+            padding-left: 16px;
+        }
+        .tooltipped {
+            padding-left: 25px;
+        }
+
+    </style>
+
+</head>
+
+<body class='extent standard default hide-overflow dark'>
+<div id='theme-selector' alt='切换主题，默认黑色' title='切换主题'>
+    <span><i class='material-icons'>desktop_windows</i></span>
+</div>
+
+<nav>
+    <div class="nav-wrapper">
+        <a href="#!" class="brand-logo blue darken-3">Report</a>
+
+        <!-- slideout menu -->
+        <ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+            <li class='waves-effect active'><a href='#!' view='test-view'
+                                               onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a>
+            </li>
+            <li class='waves-effect'><a href='#!' view='category-view' onclick="configureView(1)"><i
+                    class='material-icons'>label_outline</i></a></li>
+        </ul>
+
+        <!-- report name -->
+        <span class='report-name'>Test Report: {{ html_report_name }}</span>
+
+        <!-- report headline -->
+        <span class='report-headline'></span>
+
+        <!-- nav-right -->
+        <ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+            <li>
+                <a href='#!'>
+                    <span class='label suite-start-time blue darken-3'>StartTime: &nbsp;{{ time.start_at }}</span>
+                </a>
+            </li>
+            <li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>Time Taken:&nbsp;{{ '%0.3f'| format(time.duration|float) }} seconds</span>
+                </a>
+            </li>
+            <li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>HttpRunner &nbsp;{{ platform.httprunner_version }} </span>
+                </a>
+            </li>
+            <li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>{{ platform.python_version }} </span>
+                </a>
+            </li>
+            <li>
+                <a href='#!'>
+                    <span class='label blue darken-3'>{{ platform.platform }}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!-- container -->
+<div class='container'>
+
+    <div id='test-view' class='view'>
+
+        <section id='controls'>
+            <div class='controls grey lighten-4'>
+                <!-- test toggle -->
+                <div class='chip transparent'>
+                    <a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true'
+                       data-beloworigin='true' data-hover='true' href='#'>
+                        <i class='material-icons'>warning</i> Status
+                    </a>
+                    <ul id='tests-toggle' class='dropdown-content'>
+                        <li status='pass'><a href='#!' onclick="filters_testcases(this.type)" type="pass" >Pass<i class='material-icons green-text'>check_circle</i></a></li>
+                        <li status='fail'><a href='#!'onclick="filters_testcases(this.type)" type="fail" >Fail<i class='material-icons red-text'>cancel</i></a></li>
+                        <!-- <li status="skip"><a href="#!">Skip<i class="material-icons cyan-text">redo</i></a></li> -->
+                        <li class='divider'></li>
+                        <li status='clear' clear='true'><a href='#!' onclick="filters_testcases(this.type)" type="clear" >Clear Filters <i
+                                class='material-icons'>clear</i></a></li>
+                    </ul>
+                </div>
+                <!-- test toggle -->
+
+                <!-- clear filters -->
+                <div class='chip transparent hide'>
+                    <a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+                        <i class='material-icons'>close</i> Clear
+                    </a>
+                </div>
+                <!-- clear filters -->
+
+                <!-- enable dashboard -->
+                <div id='toggle-test-view-charts' class='chip transparent'>
+                    <a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+                        <i class='material-icons'>track_changes</i> Dashboard
+                    </a>
+                </div>
+                <!-- enable dashboard -->
+
+                <!-- search -->
+                <div class='chip transparent' alt='Search Tests' title='Search Tests'>
+                    <a href="#" class='search-div'>
+                        <i class='material-icons'>search</i> Search
+                    </a>
+
+                    <div class='input-field left hide'>
+                        <input style="color: red" id='search-tests' type='text' class='validate browser-default'
+                               placeholder='Search Tests...'>
+                    </div>
+
+                </div>
+                <!-- search -->
+            </div>
+        </section>
+        <div id='test-view-charts' class='subview-full noncar-seventy-five'>
+            <div id='charts-row' class='noncar-wrap'>
+                <div class=' noncar-inside'>
+                    <div class='noncar-title'>
+                        <div class='left panel-name'>TESTCASES</div>
+                    </div>
+                    <div class="noncar-content">
+                        <div class="noncar-content-l" >
+                            <div class='block text'>
+                                <span class='strong tooltipped' data-position='top'>total testcases:  {{ stat.testcases.total }}</span>
+                            </div>
+                            <div class='block text'>
+                                <span class='strong tooltipped' data-position='top'>success testcases:  {{ stat.testcases.success }}</span>
+                            </div>
+                            <div class='block text'>
+                                <span class='strong tooltipped' data-position='top'>fail testcases:  {{ stat.testcases.fail }}</span>
+                            </div>
+                        </div>
+                        <div class="noncar-content-r" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative; background: transparent;">
+                            <div class='chart-box'  width="369" height="140" data-zr-dom-id="zr_0" style="position: absolute; left: 0px; top: 0px; width: 369px; height: 140px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;">
+                                <canvas id="child-analysis" width="369" height="140" style="position: absolute; left: 0px; top: 0px; width: 369px; height: 140px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;">
+                                </canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id='charts-row' class='noncar-wrap'>
+                <div class=' noncar-inside'>
+                    <div class='noncar-title'>
+                        <div class='left panel-name'>TESTSTEPS</div>
+                    </div>
+                    <div class="noncar-content">
+                        <div class="noncar-content-l" >
+                            <div class='block text'>
+                                <span class='strong tooltipped' data-position='top'>total teststeps:  {{ stat.teststeps.total }}</span>
+                            </div>
+                            <div class='block text'>
+                                <span class='strong tooltipped' data-position='top'>successes teststeps:  {{ stat.teststeps.successes }}</span>
+                            </div>
+                            <div class='block text'>
+                                <span class='strong tooltipped' data-position='top'>failures teststeps:  {{ stat.teststeps.failures }}</span>
+                            </div>
+                            <div class='block text'>
+                                <span class='strong tooltipped' data-position='top'>errors teststeps:  {{ stat.teststeps.errors }}</span>
+                            </div>
+                            <div class='block text'>
+                                <span class='strong tooltipped' data-position='top'>skipped teststeps:  {{ stat.teststeps.skipped }}</span>
+                            </div>
+                        </div>
+                        <div class="noncar-content-r" style="-webkit-tap-highlight-color: transparent; user-select: none; position: relative; background: transparent;">
+                            <div class='chart-box'  width="369" height="140" style="position: absolute; left: 0px; top: 0px; width: 369px; height: 140px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;">
+                                <canvas id='parent-analysis' width='369' height='140' style="position: absolute; left: 0px; top: 0px; width: 369px; height: 140px; user-select: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0); padding: 0px; margin: 0px; border-width: 0px;"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class='subview-left left'>
+
+            <div class='view-summary'>
+                <h5>TESTCASES</h5>
+                <ul id='test-collection' class='test-collection'>
+
+                    {% for test_suite_summary in details %}
+                        {% if test_suite_summary.success == True %}
+                            <li class='test displayed active has-leaf pass' status='pass' bdd='true' test-id='{{ test_suite_summary.name }}_{{ loop.index }}'>
+                        {% else %}
+                            <li class='test displayed active has-leaf fail' status='fail' bdd='false' test-id='{{ test_suite_summary.name }}_{{ loop.index }}'>
+                        {% endif %}
+                        <div class='test-heading'>
+                            <span class='test-name'>{{ test_suite_summary.name }}</span>
+                            {% if test_suite_summary.success == True %}
+                                <span class='test-status right pass'>pass</span>
+                            {% else %}
+                                <span class='test-status right fail'>fail</span>
+                            {% endif %}
+
+                        </div>
+                        <div class='test-content hide'>
+                            <div class='test-time-info'>
+                                <span class='label start-time'>{{ test_suite_summary.time.start_at }}</span>
+                                <span class='label end-time'>{{ '%0.3f'| format(test_suite_summary.time.duration|float) }} seconds</span>
+                            </div>
+                            <div class='test-desc'>Pass: {{ test_suite_summary.stat.successes }} ;
+                                Fail: {{ test_suite_summary.stat.failures }} ;
+                                Error: {{ test_suite_summary.stat.errors }}
+                                Skip: {{ test_suite_summary.stat.skipped }} ;
+                            </div>
+                            <ul class='collapsible node-list' data-collapsible='accordion'>
+                                {% for record in test_suite_summary.records %}
+                                {% set record_index = "{}_{}".format(suite_index, loop.index) %}
+                                {% set record_meta_datas = record.meta_datas_expanded %}
+                                    {% if  record.status == 'success' %}
+                                        <li class='node level-1 leaf pass' status='pass'
+                                            test-id='{{ test_suite_summary.name }}_{{ record.name }}_{{ loop.index }}'>
+                                            {% elif record.status == 'failure' %}
+                                        <li class='node level-1 leaf fail' status='fail'
+                                            test-id='{{ test_suite_summary.name }}_{{ record.name }}_{{ loop.index }}'>
+                                            {% elif record.status == 'error' %}
+                                        <li class='node level-1 leaf error' status='error'
+                                            test-id='{{ test_suite_summary.name }}_{{ record.name }}_{{ loop.index }}'>
+                                            {% elif record.status == 'skipped' %}
+                                        <li class='node level-1 leaf skip' status='skip'
+                                            test-id='{{ test_suite_summary.name }}_{{ record.name }}_{{ loop.index }}'>
+                                    {% endif %}
+                                <div class='collapsible-header'>
+                                    <div class='node-name'>{{ record.name }}</div>
+                                    <span class='node-duration'>response_time: {{ record.response_time }} ms</span>
+                                    {% if  record.status == 'success' %}
+                                        <span class='test-status right pass'>pass</span>
+                                    {% elif record.status == 'failure' %}
+                                        <span class='test-status right fail'>fail</span>
+                                    {% elif record.status == 'error' %}
+                                        <span class='test-status right error'>error</span>
+                                    {% elif record.status == 'skipped' %}
+                                        <span class='test-status right skip'>skip</span>
+                                    {% endif %}
+
+                                </div>
+                                <div class='collapsible-body'>
+                                    {% for meta_data in record_meta_datas %}
+                                    {% set meta_data_index = loop%}
+                                    <div class='node-steps'>
+                                        {% for req_resp in meta_data.data %}
+                                            <table class='bordered table-results'>
+                                                <thead>
+                                                <tr>
+                                                    <th>Status</th>
+                                                    <th>Params</th>
+                                                    <th>Details</th>
+                                                </tr>
+                                                </thead>
+                                                {% if record.status == 'skipped' %}
+                                                <tbody>
+                                                    {% if record.attachment %}
+                                                    <tr class='fail' status='fail'>
+                                                        <td class='status fail' title='exception' alt='fail'><i
+                                                                class='material-icons'>cancel</i></td>
+                                                        <td class='timestamp'>traceback</td>
+                                                        <td class='step-details'>
+                                                            <pre class="code-block">{{ record.attachment | e }}</pre>
+                                                        </td>
+                                                    </tr>
+                                                    {% endif %}
+                                                </tbody>
+                                                {% else %}
+                                                    {% if loop.index > 1 %}
+                                                    <div class="separator" align="center">==================================== redirect to ====================================</div>
+                                                    {% endif %}
+                                                    <tbody>
+                                                    <tr class='info' status='info'>
+                                                        <td class='status info' title='接口地址' alt='info'><i
+                                                                class='material-icons'>low_priority</i></td>
+                                                        <td class='timestamp'>url</td>
+                                                        <td class='step-details'>{{ req_resp.request.url }}</td>
+                                                    </tr>
+                                                    {% if req_resp.request.method %}
+                                                    <tr class='info' status='info'>
+                                                        <td class='status info' title='请求方式' alt='info'><i
+                                                                class='material-icons'>low_priority</i></td>
+                                                        <td class='timestamp'>method</td>
+                                                        <td class='step-details'>{{ req_resp.request.method }}</td>
+                                                    </tr>
+                                                    {% endif %}
+                                                    <tr class='info' status='info'>
+                                                        <td class='status info' title='状态码' alt='info'><i
+                                                                class='material-icons'>low_priority</i></td>
+                                                        <td class='timestamp'>status_code</td>
+                                                        <td class='step-details'>{{ req_resp.response.status_code }}</td>
+                                                    </tr>
+                                                    {% for key, value in req_resp.request.items() %}
+                                                        {% if key != 'url' and key != 'method' and key != 'start_timestamp' %}
+                                                            <tr class='warning' status='warning'>
+                                                                <td class='status warning' title='{{ key }}' alt='warning'><i
+                                                                        class='material-icons'>low_priority</i></td>
+                                                                {% if key == "headers" %}
+                                                                    <td class='timestamp'>req_header</td>
+                                                                {% else %}
+                                                                    <td class='timestamp'>{{ key }}</td>
+                                                                {% endif %}
+                                                                <td class='step-details'>
+                                                                    {% if key == "headers" %}
+                                                                        {% for header_key, header_value in req_resp.response.headers.items() %}
+                                                                            <div>{{ header_key }}:&nbsp;{{ header_value | e}}</div>
+                                                                        {% endfor %}
+                                                                    {% else %}
+                                                                        {{ value }}
+                                                                    {% endif %}
+                                                                </td>
+                                                            </tr>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                    {% if meta_data_index.length > 1 %}
+                                                    <div class="separator" align="center">==================================== request_{{meta_data_index.index}} ====================================</div>
+                                                    {% endif%}
+                                                    {% for key, value in req_resp.response.items() %}
+                                                        {% if key != "elapsed_ms" and key != "response_time_ms" and key != "content_size" and key != "content_type" and key != "status_code" and key != "reason" and key != "ok" and key != "encoding" and key != "url" and value %}
+                                                            <tr class='error' status='error'>
+                                                                <td class='status error' title='{{ key }}' alt='error'><i
+                                                                        class='material-icons'>low_priority</i></td>
+                                                                {% if key == "headers" %}
+                                                                    <td class='timestamp'>rsp_header</td>
+                                                                {% else %}
+                                                                    <td class='timestamp'>{{ key }}</td>
+                                                                {% endif %}
+                                                                <td class='step-details'>
+                                                                    {% if key == "headers" %}
+                                                                        {% for header_key, header_value in req_resp.response.headers.items() %}
+                                                                            <pre class="code-block">{{ header_key }}:&nbsp;{{ header_value }}</pre>
+                                                                        {% endfor %}
+                                                                    {% elif key == "content" %}
+                                                                        {% if "image" in req_resp.response.content_type %}
+                                                                            <img src="{{ req_resp.response.content }}" />
+                                                                        {% else %}
+                                                                            {{ value }}
+                                                                        {% endif %}
+                                                                    {% elif key in ["text", "json"] %}
+                                                                        {% if value is mapping%}
+                                                                            <pre>{{ value | tojson | e }}</pre>
+                                                                        {% else %}
+                                                                            <pre>{{ value | e }}</pre>
+                                                                        {% endif %}
+                                                                    {% elif key == "cookies" %}
+                                                                        {% for cookies_key, cookies_value in req_resp.response.cookies.items() %}
+                                                                            <pre>{{ cookies_key }}:&nbsp;{{ cookies_value }}</pre>
+                                                                        {% endfor %}
+                                                                    {% else %}
+                                                                        {{ value }}
+                                                                    {% endif %}
+                                                                </td>
+                                                            </tr>
+                                                        {% endif %}
+                                                    {% endfor %}
+
+                                                    <tr class='pass' status='pass'>
+                                                        <td class='status pass' title='断言' alt='pass'><i
+                                                                class='material-icons'>low_priority</i></td>
+                                                        <td class='timestamp'>Validators</td>
+                                                        <td >
+                                                                <table id="checkvalue" >
+                                                                <tr>
+                                                                    <th >check</th>
+                                                                    <th>comparator</th>
+                                                                    <th>expect value</th>
+                                                                    <th>actual value</th>
+                                                                    <th>result</th>
+                                                                </tr>
+                                                                {% for validator in meta_data.validators %}
+                                                                <tr>
+                                                                    <td >{{validator.check | e}}</td>
+                                                                    <td>{{validator.comparator}}</td>
+                                                                    <td>{{validator.expect | e}}</td>
+                                                                    <td>{{validator.check_value | e}}</td>
+                                                                    {% if validator.check_result == "pass" %}
+                                                                    <td class="test-status pass">pass</td>
+                                                                    {% elif validator.check_result == "fail" %}
+                                                                    <td class="test-status fail">fail</td>
+                                                                    {% elif validator.check_result == "unchecked" %}
+                                                                    <td class="test-status skip">unchecked</td>
+                                                                    {% endif %}
+                                                                </tr>
+                                                                {% endfor %}
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+
+                                                    <tr class='info' status='info'>
+                                                        <td class='status info' title='info' alt='info'><i
+                                                                class='material-icons'>low_priority</i></td>
+                                                        <td class='timestamp'>Statistics</td>
+                                                        <td class='step-details'>
+                                                            <div>
+                                                                content_size(bytes): {{ meta_data.stat.content_size }}
+                                                            </div>
+                                                            <div>
+                                                                response_time(ms): {{ meta_data.stat.response_time_ms }}
+                                                            </div>
+                                                            <div>
+                                                                elapsed(ms): {{ meta_data.stat.elapsed_ms }}
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+
+                                                    {% if record.attachment and meta_data_index.last %}
+
+                                                        <tr class='fail' status='fail'>
+                                                            <td class='status fail' title='exception' alt='fail'><i
+                                                                    class='material-icons'>cancel</i></td>
+                                                            <td class='timestamp'>traceback</td>
+                                                            <td class='step-details'>
+                                                                <pre class="code-block">{{ record.attachment | e }}</pre>
+                                                            </td>
+                                                        </tr>
+                                                    {% endif %}
+                                                    </tbody>
+                                                {% endif %}
+                                                </table>
+                                        {% endfor %}
+                                    </div>
+                                    {% endfor %}
+                                </div>
+                                </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <!-- subview left -->
+
+        <div class='subview-right left'>
+            <div class='view-summary'>
+                <h6 class='test-name'></h6>
+
+                <div id='step-filters' class="right">
+                    <span status="pass" alt="pass" title="pass"><a href='#!' onclick="step_filter(this.type)" type="pass"><i class="material-icons green-text">check_circle</i></a></span>
+                    <span status="fail" alt="fail" title="fail"><a href='#!' onclick="step_filter(this.type)" type="fail"><i
+                            class="material-icons red-text">cancel</i></a></span>
+                    <span class="text-lighten-1" status="error" alt="error" title="error"><a href='#!' onclick="step_filter(this.type)" type="error"><i
+                            class="material-icons pink-text ">error</i></a></span>
+                    <span status="skip" alt="skip" title="skip"><a href='#!' onclick="step_filter(this.type)" type="skip"><i
+                            class="material-icons teal-text">redo</i></a></span>
+                    <span status="clear" alt="Clear filters" title="Clear filters"><a href='#!' onclick="step_filter(this.type)" type="clear"><i
+                            class="material-icons">clear</i></a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- subview right -->
+    <!-- test view -->
+    <div id='category-view' class='view hide'>
+
+        <section id='controls'>
+            <div class='controls grey lighten-4'>
+                <!-- search -->
+                <div class='chip transparent' alt='Search Tests' title='Search Tests'>
+                    <a href="#" class='search-div'>
+                        <i class='material-icons'>search</i> Search
+                    </a>
+
+                    <div class='input-field left hide'>
+                        <input style="color: red;" id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+                    </div>
+
+                </div>
+                <!-- search -->
+            </div>
+        </section>
+
+        <div class='subview-left left'>
+
+            <div class='view-summary'>
+                <h5>Categories</h5>
+                <ul id='category-collection' class='category-collection'>
+
+                    <li class='category displayed active'>
+                        <div class='category-heading'>
+                            <span class='category-name'>All TESTCASES</span>
+                            <span class='category-status right'>
+							    <span class='label pass'>{{ stat.testcases.success }} </span>
+                                {% if stat.testcases.fail != 0 %}
+                                    <span class='label fail'>{{ stat.testcases.fail }}</span>
+                                {% endif %}
+                                </span>
+                        </div>
+                        <div class='category-content hide'>
+                            <div class='category-status-counts'>
+                                <span class='label green accent-4 white-text'>Passed: {{ stat.teststeps.successes }}</span>
+                                <span class='label red lighten-1 white-text'>Failed: {{ stat.teststeps.failures }}</span>
+                                <span class='label blue lighten-1 white-text'>Errored: {{ stat.teststeps.errors }}</span>
+                                <span class="label yellow darken-2 white-text">Skipped: {{ stat.teststeps.skipped }}</span>
+                            </div>
+
+                            <div class='category-tests'>
+                                <table class='bordered table-results'>
+                                    <thead>
+                                    <tr>
+                                        <th>Timestamp</th>
+                                        <th>TestName</th>
+                                        <th>Status</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for test_suite_summary in details %}
+                                        <tr style="border: 1px solid #49cc90; background-color: rgba(73, 204, 144, .1)">
+                                            <td>{{ '%0.3f'| format(test_suite_summary.time.duration|float) }} s</td>
+                                            <td class='linked'
+                                                test-id='{{ test_suite_summary.name }}_{{ loop.index }}'>{{ test_suite_summary.name }}</td>
+                                            {% if test_suite_summary.success == True %}
+                                                <td><span class='test-status pass'>pass</span></td>
+                                            {% else %}
+                                                <td><span class='test-status fail'>fail</span></td>
+                                            {% endif %}
+
+                                        </tr>
+                                        {% for record in test_suite_summary.records %}
+                                            <tr>
+                                                <td>{{ record.response_time }} ms</td>
+                                                <td class='linked'
+                                                    test-id='{{ test_suite_summary.name }}_{{ loop.index }}'>{{ record.name }}</td>
+                                                {% if record.status == 'success' %}
+                                                    <td><span class='test-status pass'>pass</span></td>
+                                                {% elif record.status == 'failure' %}
+                                                    <td><span class='test-status fail'>fail</span></td>
+                                                {% elif record.status == 'error' %}
+                                                    <td><span class='test-status error'>error</span></td>
+                                                {% elif record.status == 'skipped' %}
+                                                    <td><span class='test-status' style="color: #fbc02d">skip</span>
+                                                    </td>
+                                                {% endif %}
+                                            </tr>
+                                        {% endfor %}
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </li>
+
+                    {% for test_suite_summary in details %}
+                        <li class='category displayed active'>
+                            <div class='category-heading'>
+                                <span class='category-name'>{{ test_suite_summary.name }}</span>
+                                <span class='category-status right'>
+							    <span class='label pass'>{{ test_suite_summary.stat.successes }} </span>
+                                    {% if test_suite_summary.stat.failures != 0 %}
+                                        <span class='label fail'>{{ test_suite_summary.stat.failures }}</span>
+                                    {% endif %}
+                                    {% if test_suite_summary.stat.errors != 0 %}
+                                        <span class='label blue lighten-1'>{{ test_suite_summary.stat.errors }}</span>
+                                    {% endif %}
+                                    {% if test_suite_summary.stat.skipped != 0 %}
+                                        <span class='label yellow darken-2'>{{ test_suite_summary.stat.skipped }}</span>
+                                    {% endif %}
+                                </span>
+                            </div>
+                            <div class='category-content hide'>
+                                <div class='category-status-counts'>
+                                    <span class='label green accent-4 white-text'>Passed: {{ test_suite_summary.stat.successes }}</span>
+                                    <span class='label red lighten-1 white-text'>Failed: {{ test_suite_summary.stat.failures }}</span>
+                                    <span class='label blue lighten-1 white-text'>Errored: {{ test_suite_summary.stat.errors }}</span>
+                                    <span class="label yellow darken-2 white-text">Skipped: {{ test_suite_summary.stat.skipped }}</span>
+                                </div>
+
+                                <div class='category-tests'>
+                                    <table class='bordered table-results'>
+                                        <thead>
+                                        <tr>
+                                            <th>Timestamp</th>
+                                            <th>TestName</th>
+                                            <th>Status</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for record in test_suite_summary.records %}
+                                            <tr>
+                                                <td>{{ record.response_time }}</td>
+                                                <td class='linked'
+                                                    test-id='{{ test_suite_summary.name }}_{{ loop.index }}'>{{ record.name }}</td>
+                                                {% if record.status == 'success' %}
+                                                    <td><span class='test-status pass'>pass</span></td>
+                                                {% elif record.status == 'failure' %}
+                                                    <td><span class='test-status fail'>fail</span></td>
+                                                {% elif record.status == 'error' %}
+                                                    <td><span class='test-status error'>error</span></td>
+                                                {% elif record.status == 'skipped' %}
+                                                    <td><span class='test-status' style="color: #fbc02d">skip</span>
+                                                    </td>
+                                                {% endif %}
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class='subview-right left'>
+            <div class='view-summary'>
+                <h5 class='category-name'></h5>
+            </div>
+        </div>
+    </div>
+    <!-- category view -->
+
+
+    <!-- testrunner-logs view -->
+    <!-- container -->
+</div>
+<script>
+    var test_suite_success = 0;
+    {%for test_suite_summary in details %}
+        {% if test_suite_summary.success == True %}
+            test_suite_success = test_suite_success + 1;
+        {% endif %}
+
+    {% endfor %}
+
+    var statusGroup = {
+        passParent: {{ stat.teststeps.successes }},
+        failParent: {{ stat.teststeps.failures }},
+        fatalParent: 0,
+        errorParent: {{ stat.teststeps.errors }},
+        warningParent: 0,
+        skipParent: {{ stat.teststeps.skipped }},
+        exceptionsParent: 0,
+
+        passChild: test_suite_success,
+        failChild: {{ details|length }} -test_suite_success,
+        fatalChild: 0,
+        errorChild: 0,
+        warningChild: 0,
+        skipChild: 0,
+        infoChild: 0,
+        exceptionsChild: 0,
+
+        passGrandChild: 0,
+        failGrandChild: 0,
+        fatalGrandChild: 0,
+        errorGrandChild: 0,
+        warningGrandChild: 0,
+        skipGrandChild: 0,
+        infoGrandChild: 0,
+        exceptionsGrandChild: 0,
+    };
+
+</script>
+
+<script src='http://extentreports.com/resx/dist/js/extent.js' type='text/javascript'></script>
+
+
+<script type='text/javascript'>
+    $(window).off("keydown");
+</script>
+
+<script type="text/javascript">
+    function filters_testcases(mytype){
+        testcases = document.getElementById('test-collection').getElementsByClassName('displayed')
+        if (mytype == 'pass'){
+            for (var i=0,len=testcases.length;i < len; i++){
+                if (testcases[i].getAttribute('bdd') == 'false'){
+                    testcases[i].style.display="none"
+                }else{
+                    testcases[i].style.display="block"
+                }
+            }
+        }else if(mytype == 'fail'){
+            for (var i=0,len=testcases.length;i < len; i++){
+                if (testcases[i].getAttribute('bdd') == 'true'){
+                    testcases[i].style.display="none"
+                }else{
+                    testcases[i].style.display="block"
+                }
+            }
+        }else if(mytype == 'clear'){
+            for (var i=0,len=testcases.length;i < len; i++){
+                testcases[i].style.display="block"
+            }
+        }
+    };
+</script>>
+<script type="text/javascript">
+    function step_filter(mytype){
+        testcontents = document.getElementsByClassName('test-content')
+        teststeps = testcontents[testcontents.length - 1].getElementsByTagName('li');
+        stepfilters = document.getElementById('step-filters').getElementsByTagName('span');
+        for (var i=0, len=stepfilters.length;i<len;i++){
+            if (stepfilters[i].getAttribute('status') != mytype){
+                stepfilters[i].classList.remove('border-bottom-highlight')
+            }
+        }
+        for (var i=0,len=teststeps.length;i < len; i++){
+            if (mytype != 'clear'){
+                if (teststeps[i].getAttribute('status') == mytype){
+                    teststeps[i].style.display="block"
+                }else{
+                    teststeps[i].style.display="none"
+                }
+            }else{
+                teststeps[i].style.display="block"
+            }
+        }
+    }
+</script>>
+</body>
+
+</html>

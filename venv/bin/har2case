@@ -1,0 +1,8 @@
+#!/Users/w550856/pythonProject/httprunner_p4_demo/venv/bin/python
+# -*- coding: utf-8 -*-
+import re
+import sys
+from httprunner.cli import main_har2case_alias
+if __name__ == '__main__':
+    sys.argv[0] = re.sub(r'(-script\.pyw|\.exe)?$', '', sys.argv[0])
+    sys.exit(main_har2case_alias())
