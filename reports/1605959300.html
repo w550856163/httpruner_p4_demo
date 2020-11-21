@@ -1,0 +1,1390 @@
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="content-type" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> - TestReport</title>
+  <style>
+    body {
+      background-color: #f2f2f2;
+      color: #333;
+      margin: 0 auto;
+      width: 960px;
+    }
+    #summary {
+      width: 960px;
+      margin-bottom: 20px;
+    }
+    #summary th {
+      background-color: skyblue;
+      padding: 5px 12px;
+    }
+    #summary td {
+      background-color: lightblue;
+      text-align: center;
+      padding: 4px 8px;
+    }
+    .details {
+      width: 960px;
+      margin-bottom: 20px;
+    }
+    .details th {
+      background-color: skyblue;
+      padding: 5px 12px;
+    }
+    .details tr .passed {
+      background-color: lightgreen;
+    }
+    .details tr .failed {
+      background-color: red;
+    }
+    .details tr .unchecked {
+      background-color: gray;
+    }
+    .details td {
+      background-color: lightblue;
+      padding: 5px 12px;
+    }
+    .details .detail {
+      background-color: lightgrey;
+      font-size: smaller;
+      padding: 5px 10px;
+      line-height: 20px;
+      text-align: left;
+    }
+    .details .success {
+      background-color: greenyellow;
+    }
+    .details .error {
+      background-color: red;
+    }
+    .details .failure {
+      background-color: salmon;
+    }
+    .details .skipped {
+      background-color: gray;
+    }
+
+    .button {
+      font-size: 1em;
+      padding: 6px;
+      width: 4em;
+      text-align: center;
+      background-color: #06d85f;
+      border-radius: 20px/50px;
+      cursor: pointer;
+      transition: all 0.3s ease-out;
+    }
+    a.button{
+      color: gray;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .button:hover {
+      background: #2cffbd;
+    }
+
+    .overlay {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.7);
+      transition: opacity 500ms;
+      visibility: hidden;
+      opacity: 0;
+      line-height: 25px;
+    }
+    .overlay:target {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .popup {
+      margin: 70px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      width: 50%;
+      position: relative;
+      transition: all 3s ease-in-out;
+    }
+
+    .popup h2 {
+      margin-top: 0;
+      color: #333;
+      font-family: Tahoma, Arial, sans-serif;
+    }
+    .popup .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      transition: all 200ms;
+      font-size: 30px;
+      font-weight: bold;
+      text-decoration: none;
+      color: #333;
+    }
+    .popup .close:hover {
+      color: #06d85f;
+    }
+    .popup .content {
+      max-height: 80%;
+      overflow: auto;
+      text-align: left;
+    }
+    .popup .separator {
+      color:royalblue
+    }
+
+    @media screen and (max-width: 700px) {
+      .box {
+        width: 70%;
+      }
+      .popup {
+        width: 70%;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+  <h1>Test Report: </h1>
+
+  <h2>Summary</h2>
+  <table id="summary">
+    <tr>
+      <th>START AT</th>
+      <td colspan="4">2020-11-21 19:48:20</td>
+    </tr>
+    <tr>
+      <th>DURATION</th>
+      <td colspan="4">0.614 seconds</td>
+    </tr>
+    <tr>
+      <th>PLATFORM</th>
+      <td>HttpRunner 2.4.3 </td>
+      <td>CPython 3.8.2 </td>
+      <td colspan="2">macOS-10.15.7-x86_64-i386-64bit</td>
+    </tr>
+    <tr>
+      <th>STAT</th>
+      <th colspan="2">TESTCASES (success/fail)</th>
+      <th colspan="2">TESTSTEPS (success/fail/error/skip)</th>
+    </tr>
+    <tr>
+      <td>total (details) =></td>
+      <td colspan="2">1 (1/0)</td>
+      <td colspan="2">3 (3/0/0/0)</td>
+    </tr>
+  </table>
+
+  <h2>Details</h2>
+
+  
+  
+  <h3>论坛登录</h3>
+  <table id="suite_1" class="details">
+    <tr>
+      <td>TOTAL: 3</td>
+      <td>SUCCESS: 3</td>
+      <td>FAILED: 0</td>
+      <td>ERROR: 0</td>
+      <td>SKIPPED: 0</td>
+    </tr>
+    <tr>
+      <th>Status</th>
+      <th colspan="2">Name</th>
+      <th>Response Time</th>
+      <th>Detail</th>
+    </tr>
+
+    
+    
+    
+    <tr id="record_1_1">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">打开首页</td>
+      <td style="text-align:center;width:6em;">163.38 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_1_1">log-1</a>
+        <div id="popup_log_1_1_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_1_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: 打开首页</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://47.107.178.45/phpwind/
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          GET
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.24.0
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://47.107.178.45/phpwind/
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {'csrf_token': '52eada5e1258b8f5', 'zFb_lastvisit': '0%091605959300%09%2Fphpwind%2F', 'zFb_visitor': 'n%2FkUvocpRLSoe7Eq771mieDqEDiE7fr%2BXPlcDNTP67a11ek2tvwL5eRtIfQ%3D', '_ac_app_ua': '61a79f3a33afebf04f'}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Date</strong>: Sat, 21 Nov 2020 11:48:20 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Server</strong>: Apache/2.4.6 (CentOS) PHP/5.4.16
+                            </div>
+                            
+                            <div>
+                              <strong>X-Powered-By</strong>: PHP/5.4.16
+                            </div>
+                            
+                            <div>
+                              <strong>Set-Cookie</strong>: zFb_lastvisit=0%091605959300%09%2Fphpwind%2F; expires=Sun, 21-Nov-2021 11:48:20 GMT; path=/, zFb_visitor=n%2FkUvocpRLSoe7Eq771mieDqEDiE7fr%2BXPlcDNTP67a11ek2tvwL5eRtIfQ%3D; path=/, csrf_token=52eada5e1258b8f5; path=/; httponly, _ac_app_ua=61a79f3a33afebf04f; expires=Thu, 20-Nov-2025 11:48:20 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Encoding</strong>: gzip
+                            </div>
+                            
+                            <div>
+                              <strong>Vary</strong>: Accept-Encoding
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 5919
+                            </div>
+                            
+                            <div>
+                              <strong>Keep-Alive</strong>: timeout=5, max=100
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: Keep-Alive
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: text/html;charset=utf-8
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            text/html;charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>text</th>
+                        <td>
+                          
+                              <pre>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&#34;UTF-8&#34; /&gt;
+&lt;title&gt;本站新帖 - phpwind 9.0 - Powered by phpwind&lt;/title&gt;
+&lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;chrome=1&#34;&gt;
+&lt;meta name=&#34;generator&#34; content=&#34;phpwind v9.0 20130227&#34; /&gt;
+&lt;meta name=&#34;description&#34; content=&#34;【phpwind 9.0】中的最新帖子列表&#34; /&gt;
+&lt;meta name=&#34;keywords&#34; content=&#34;&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://47.107.178.45/phpwind/themes/site/default/css/dev/core.css?v=20130227&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://47.107.178.45/phpwind/themes/site/def ... OMITTED 42270 CHARACTORS ...</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>45140</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>163.38</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>147.638</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_2">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">登录操作</td>
+      <td style="text-align:center;width:6em;">111.64 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_2_1">log-1</a>
+        <div id="popup_log_1_2_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_2_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: 登录操作</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://47.107.178.45/phpwind/index.php?m=u&c=login&a=dologin
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          POST
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: application/json, text/javascript, */*; q=0.01
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>X-Requested-With</strong>: XMLHttpRequest
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Type</strong>: application/x-www-form-urlencoded; charset=UTF-8
+                          </div>
+                          
+                          <div>
+                            <strong>Cookie</strong>: _ac_app_ua=61a79f3a33afebf04f; csrf_token=52eada5e1258b8f5; zFb_lastvisit=0%091605959300%09%2Fphpwind%2F; zFb_visitor=n%2FkUvocpRLSoe7Eq771mieDqEDiE7fr%2BXPlcDNTP67a11ek2tvwL5eRtIfQ%3D
+                          </div>
+                          
+                          <div>
+                            <strong>Content-Length</strong>: 66
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>body</th>
+                      <td>
+                        
+                          username=xiaoliusir001&password=123456&csrf_token=52eada5e1258b8f5
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://47.107.178.45/phpwind/index.php?m=u&c=login&a=dologin
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {'zFb_lastvisit': '0%091605959300%09%2Fphpwind%2Findex.php%3Fm%3Du%26c%3Dlogin%26a%3Ddologin'}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Date</strong>: Sat, 21 Nov 2020 11:48:20 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Server</strong>: Apache/2.4.6 (CentOS) PHP/5.4.16
+                            </div>
+                            
+                            <div>
+                              <strong>X-Powered-By</strong>: PHP/5.4.16
+                            </div>
+                            
+                            <div>
+                              <strong>Set-Cookie</strong>: zFb_lastvisit=0%091605959300%09%2Fphpwind%2Findex.php%3Fm%3Du%26c%3Dlogin%26a%3Ddologin; expires=Sun, 21-Nov-2021 11:48:20 GMT; path=/
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Encoding</strong>: gzip
+                            </div>
+                            
+                            <div>
+                              <strong>Vary</strong>: Accept-Encoding
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 285
+                            </div>
+                            
+                            <div>
+                              <strong>Keep-Alive</strong>: timeout=5, max=99
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: Keep-Alive
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: text/html; charset=UTF-8
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            text/html; charset=UTF-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>json</th>
+                        <td>
+                          
+                              <pre>{&#39;referer&#39;: &#39;http://47.107.178.45/phpwind/index.php?m=u&amp;c=login&amp;a=welcome&amp;_statu=RGxvenFpbENMTTBBdm11Y3NUZGk3aUowTmc3RDl4R01YMEF3ME5MOWI0c25xNzZUVU93UTdzNkJXTmNUWXVLYm9zdDJKZyUzRCUzRHx8&#39;, &#39;refresh&#39;: False, &#39;state&#39;: &#39;success&#39;, &#39;data&#39;: &#39;&#39;, &#39;message&#39;: {&#39;check&#39;: {&#39;url&#39;: None}, &#39;0&#39;: &#39;欢迎回来...&#39;}, &#39;__error&#39;: &#39;&#39;}</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+                <table>
+                    <tr>
+                      <th>check</th>
+                      <th>comparator</th>
+                      <th>expect value</th>
+                      <th>actual value</th>
+                    </tr>
+                    
+                    <tr>
+                      
+                      <td class="passed">
+                      
+                        status_code
+                      </td>
+                      <td>equals</td>
+                      <td>200</td>
+                      <td>200</td>
+                    </tr>
+                    
+                </table>
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>314</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>111.64</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>108.377</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+    
+    
+    <tr id="record_1_3">
+      <th class="success" style="width:5em;">success</th>
+      <td colspan="2">登录之后跳转</td>
+      <td style="text-align:center;width:6em;">296.10 ms</td>
+      <td class="detail">
+
+        
+        
+        <a class="button" href="#popup_log_1_3_1">log-1</a>
+        <div id="popup_log_1_3_1" class="overlay">
+          <div class="popup">
+            <h2>Request and Response data</h2>
+            <a class="close" href="#record_1_3_1">&times;</a>
+
+            <div class="content">
+              <h3>Name: 登录之后跳转</h3>
+
+              
+
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://47.107.178.45/phpwind/index.php?m=u&c=login&a=welcome&_statu=RGxvenFpbENMTTBBdm11Y3NUZGk3aUowTmc3RDl4R01YMEF3ME5MOWI0c25xNzZUVU93UTdzNkJXTmNUWXVLYm9zdDJKZyUzRCUzRHx8
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          GET
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.24.0
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Cookie</strong>: _ac_app_ua=61a79f3a33afebf04f; csrf_token=52eada5e1258b8f5; zFb_lastvisit=0%091605959300%09%2Fphpwind%2Findex.php%3Fm%3Du%26c%3Dlogin%26a%3Ddologin; zFb_visitor=n%2FkUvocpRLSoe7Eq771mieDqEDiE7fr%2BXPlcDNTP67a11ek2tvwL5eRtIfQ%3D
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://47.107.178.45/phpwind/index.php?m=u&c=login&a=welcome&_statu=RGxvenFpbENMTTBBdm11Y3NUZGk3aUowTmc3RDl4R01YMEF3ME5MOWI0c25xNzZUVU93UTdzNkJXTmNUWXVLYm9zdDJKZyUzRCUzRHx8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            302
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            Found
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {'zFb_lastvisit': '0%091605959300%09%2Fphpwind%2Findex.php%3Fm%3Du%26c%3Dlogin%26a%3Dwelcome%26_statu%3DRGxvenFpbENMTTBBdm11Y3NUZGk3aUowTmc3RDl4R01YMEF3ME5MOWI0c25xNzZUVU93UTdzNkJXTmNUWXVLYm9zdDJKZyUzRCUzRHx8', 'zFb_winduser': 'Pvi55R1gVKSwAM%2FUXo1SpBZQkwqudcGMYbl67RRG5nPLi%2B2Fdic%2FGX5Xaqw%3D'}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Date</strong>: Sat, 21 Nov 2020 11:48:20 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Server</strong>: Apache/2.4.6 (CentOS) PHP/5.4.16
+                            </div>
+                            
+                            <div>
+                              <strong>X-Powered-By</strong>: PHP/5.4.16
+                            </div>
+                            
+                            <div>
+                              <strong>Set-Cookie</strong>: zFb_lastvisit=0%091605959300%09%2Fphpwind%2Findex.php%3Fm%3Du%26c%3Dlogin%26a%3Dwelcome%26_statu%3DRGxvenFpbENMTTBBdm11Y3NUZGk3aUowTmc3RDl4R01YMEF3ME5MOWI0c25xNzZUVU93UTdzNkJXTmNUWXVLYm9zdDJKZyUzRCUzRHx8; expires=Sun, 21-Nov-2021 11:48:20 GMT; path=/, zFb_winduser=Pvi55R1gVKSwAM%2FUXo1SpBZQkwqudcGMYbl67RRG5nPLi%2B2Fdic%2FGX5Xaqw%3D; path=/
+                            </div>
+                            
+                            <div>
+                              <strong>Location</strong>: http://47.107.178.45/phpwind
+                            </div>
+                            
+                            <div>
+                              <strong>Status</strong>: 302 Found
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Encoding</strong>: gzip
+                            </div>
+                            
+                            <div>
+                              <strong>Vary</strong>: Accept-Encoding
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 20
+                            </div>
+                            
+                            <div>
+                              <strong>Keep-Alive</strong>: timeout=5, max=98
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: Keep-Alive
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: text/html;charset=utf-8
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            text/html;charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>text</th>
+                        <td>
+                          
+                              <pre></pre>
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              
+              <div class="separator">==================================== redirect to ====================================</div>
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://47.107.178.45/phpwind
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          GET
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.24.0
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Cookie</strong>: _ac_app_ua=61a79f3a33afebf04f; csrf_token=52eada5e1258b8f5; zFb_lastvisit=0%091605959300%09%2Fphpwind%2Findex.php%3Fm%3Du%26c%3Dlogin%26a%3Dwelcome%26_statu%3DRGxvenFpbENMTTBBdm11Y3NUZGk3aUowTmc3RDl4R01YMEF3ME5MOWI0c25xNzZUVU93UTdzNkJXTmNUWXVLYm9zdDJKZyUzRCUzRHx8; zFb_visitor=n%2FkUvocpRLSoe7Eq771mieDqEDiE7fr%2BXPlcDNTP67a11ek2tvwL5eRtIfQ%3D; zFb_winduser=Pvi55R1gVKSwAM%2FUXo1SpBZQkwqudcGMYbl67RRG5nPLi%2B2Fdic%2FGX5Xaqw%3D
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://47.107.178.45/phpwind
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            301
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            Moved Permanently
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            iso-8859-1
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Date</strong>: Sat, 21 Nov 2020 11:48:20 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Server</strong>: Apache/2.4.6 (CentOS) PHP/5.4.16
+                            </div>
+                            
+                            <div>
+                              <strong>Location</strong>: http://47.107.178.45/phpwind/
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 237
+                            </div>
+                            
+                            <div>
+                              <strong>Keep-Alive</strong>: timeout=5, max=97
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: Keep-Alive
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: text/html; charset=iso-8859-1
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            text/html; charset=iso-8859-1
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>text</th>
+                        <td>
+                          
+                              <pre>&lt;!DOCTYPE HTML PUBLIC &#34;-//IETF//DTD HTML 2.0//EN&#34;&gt;
+&lt;html&gt;&lt;head&gt;
+&lt;title&gt;301 Moved Permanently&lt;/title&gt;
+&lt;/head&gt;&lt;body&gt;
+&lt;h1&gt;Moved Permanently&lt;/h1&gt;
+&lt;p&gt;The document has moved &lt;a href=&#34;http://47.107.178.45/phpwind/&#34;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;/body&gt;&lt;/html&gt;
+</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              
+              <div class="separator">==================================== redirect to ====================================</div>
+              
+
+              <h3>Request:</h3>
+              <div style="overflow: auto">
+                <table>
+                  
+                    <tr>
+                      <th>url</th>
+                      <td>
+                        
+                          http://47.107.178.45/phpwind/
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>method</th>
+                      <td>
+                        
+                          GET
+                        
+                      </td>
+                    </tr>
+                  
+                    <tr>
+                      <th>headers</th>
+                      <td>
+                        
+                          
+                          <div>
+                            <strong>User-Agent</strong>: python-requests/2.24.0
+                          </div>
+                          
+                          <div>
+                            <strong>Accept-Encoding</strong>: gzip, deflate
+                          </div>
+                          
+                          <div>
+                            <strong>Accept</strong>: */*
+                          </div>
+                          
+                          <div>
+                            <strong>Connection</strong>: keep-alive
+                          </div>
+                          
+                          <div>
+                            <strong>Cookie</strong>: _ac_app_ua=61a79f3a33afebf04f; csrf_token=52eada5e1258b8f5; zFb_lastvisit=0%091605959300%09%2Fphpwind%2Findex.php%3Fm%3Du%26c%3Dlogin%26a%3Dwelcome%26_statu%3DRGxvenFpbENMTTBBdm11Y3NUZGk3aUowTmc3RDl4R01YMEF3ME5MOWI0c25xNzZUVU93UTdzNkJXTmNUWXVLYm9zdDJKZyUzRCUzRHx8; zFb_visitor=n%2FkUvocpRLSoe7Eq771mieDqEDiE7fr%2BXPlcDNTP67a11ek2tvwL5eRtIfQ%3D; zFb_winduser=Pvi55R1gVKSwAM%2FUXo1SpBZQkwqudcGMYbl67RRG5nPLi%2B2Fdic%2FGX5Xaqw%3D
+                          </div>
+                          
+                        
+                      </td>
+                    </tr>
+                  
+                </table>
+              </div>
+
+              <h3>Response:</h3>
+              <div style="overflow: auto">
+                <table>
+                    
+                      <tr>
+                        <th>ok</th>
+                        <td>
+                          
+                            True
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>url</th>
+                        <td>
+                          
+                            http://47.107.178.45/phpwind/
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>status_code</th>
+                        <td>
+                          
+                            200
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>reason</th>
+                        <td>
+                          
+                            OK
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>cookies</th>
+                        <td>
+                          
+                            {'zFb_lastvisit': '0%091605959300%09%2Fphpwind%2F'}
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>encoding</th>
+                        <td>
+                          
+                            utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>headers</th>
+                        <td>
+                          
+                            
+                            <div>
+                              <strong>Date</strong>: Sat, 21 Nov 2020 11:48:20 GMT
+                            </div>
+                            
+                            <div>
+                              <strong>Server</strong>: Apache/2.4.6 (CentOS) PHP/5.4.16
+                            </div>
+                            
+                            <div>
+                              <strong>X-Powered-By</strong>: PHP/5.4.16
+                            </div>
+                            
+                            <div>
+                              <strong>Set-Cookie</strong>: zFb_lastvisit=0%091605959300%09%2Fphpwind%2F; expires=Sun, 21-Nov-2021 11:48:20 GMT; path=/
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Encoding</strong>: gzip
+                            </div>
+                            
+                            <div>
+                              <strong>Vary</strong>: Accept-Encoding
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Length</strong>: 7962
+                            </div>
+                            
+                            <div>
+                              <strong>Keep-Alive</strong>: timeout=5, max=96
+                            </div>
+                            
+                            <div>
+                              <strong>Connection</strong>: Keep-Alive
+                            </div>
+                            
+                            <div>
+                              <strong>Content-Type</strong>: text/html;charset=utf-8
+                            </div>
+                            
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>content_type</th>
+                        <td>
+                          
+                            text/html;charset=utf-8
+                          
+                        </td>
+                      </tr>
+                    
+                      <tr>
+                        <th>text</th>
+                        <td>
+                          
+                              <pre>&lt;!doctype html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta charset=&#34;UTF-8&#34; /&gt;
+&lt;title&gt;本站新帖 - phpwind 9.0 - Powered by phpwind&lt;/title&gt;
+&lt;meta http-equiv=&#34;X-UA-Compatible&#34; content=&#34;chrome=1&#34;&gt;
+&lt;meta name=&#34;generator&#34; content=&#34;phpwind v9.0 20130227&#34; /&gt;
+&lt;meta name=&#34;description&#34; content=&#34;【phpwind 9.0】中的最新帖子列表&#34; /&gt;
+&lt;meta name=&#34;keywords&#34; content=&#34;&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://47.107.178.45/phpwind/themes/site/default/css/dev/core.css?v=20130227&#34; /&gt;
+&lt;link rel=&#34;stylesheet&#34; href=&#34;http://47.107.178.45/phpwind/themes/site/def ... OMITTED 53761 CHARACTORS ...</pre>
+                          
+                        </td>
+                      </tr>
+                    
+                  </table>
+              </div>
+              
+
+              <h3>Validators:</h3>
+                <div style="overflow: auto">
+                
+                
+
+                
+                
+              </div>
+
+              <h3>Statistics:</h3>
+              <div style="overflow: auto">
+                <table>
+                  <tr>
+                      <th>content_size(bytes)</th>
+                      <td>57189</td>
+                    </tr>
+                  <tr>
+                    <th>response_time(ms)</th>
+                    <td>296.1</td>
+                  </tr>
+                  <tr>
+                    <th>elapsed(ms)</th>
+                    <td>76.387</td>
+                  </tr>
+                </table>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        
+
+        
+
+      </td>
+    </tr>
+  
+  </table>
+  
+</body>

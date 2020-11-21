@@ -9,9 +9,9 @@ import requests
 from faker import Faker
 import pymysql
 
-#设置代理
-os.environ['http_proxy'] = 'http://127.0.0.1:0000'
-os.environ['https_proxy'] = 'https://127.0.0.1:0000'
+# #设置代理
+# os.environ['http_proxy'] = 'http://127.0.0.1:0000'
+# os.environ['https_proxy'] = 'https://127.0.0.1:0000'
 
 
 def get_search_word():

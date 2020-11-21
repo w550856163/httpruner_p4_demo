@@ -1,0 +1,43 @@
+- config:
+    name: 论坛注册
+    base_url: http://47.107.178.45
+
+- test:
+    name: 打开注册页面
+    request:
+      method: GET
+      url: /phpwind/index.php
+      params:
+        m: u
+        c: register
+    extract:
+      token: 'name="csrf_token" value="(.+?)"/>'
+    validate:
+      - eq: ['status_code',200]
+
+- test:
+    name: 注册操作
+    request:
+      method: POST
+      url: /phpwind/index.php
+      params:
+        m: u
+        c: register
+        a: dorun
+      data:
+        username: $username
+        password: 123456
+        repassword: 123456
+        email: $email
+        csrf_token: ${token}
+
+- test:
+    name: 增加积分
+    request:
+      method: POST
+      url: /phpwind/index.php
+      params:
+        m: u
+        a: showcredit
+      data:
+        csrf_token: ${token}

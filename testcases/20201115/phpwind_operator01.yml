@@ -1,0 +1,51 @@
+- config:
+    name: 论坛登录
+    base_url: http://47.107.178.45
+    export:
+      - token
+      - logid
+
+- test:
+    name: 打开首页
+    request:
+      method: GET
+      url: /phpwind/
+    extract:
+      token: 'name="csrf_token" value="(.+?)"/>'
+    validate:
+      - eq: ['status_code',200]
+
+- test:
+    name: 登录操作
+    request:
+      method: POST
+      url: /phpwind/index.php
+      params:
+        m: u
+        c: login
+        a: dologin
+      headers:
+        Accept: application/json, text/javascript, */*; q=0.01
+        X-Requested-With: XMLHttpRequest
+        User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.198 Safari/537.36
+        Content-Type: application/x-www-form-urlencoded; charset=UTF-8
+      data:
+        username: xiaoliusir001
+        password: 123456
+        csrf_token: $token
+    extract:
+      logid: '_statu=(.+?)"'
+    validate:
+      - eq: ['status_code',200]
+
+- test:
+    name: 登录之后跳转
+    request:
+      method: GET
+      url: /phpwind/index.php
+      params:
+        m: u
+        c: login
+        a: welcome
+        _statu: $logid
+
